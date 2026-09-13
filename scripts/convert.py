@@ -81,6 +81,7 @@ _FENCE_DIV_RE = re.compile(r"^:::+.*$", re.M)
 
 def clean_markdown(content):
     """Strip pandoc/Calibre artefacts that carry no meaning for translation."""
+    content = content.replace("\u21a9\ufe0e", "").replace("\u21a9", "")
     content = content.replace("﻿", "").replace(" ", " ")
     content = content.replace("\r\n", "\n").replace("\r", "\n")
     content = _FENCE_DIV_RE.sub("", content)
@@ -233,8 +234,29 @@ def extract_pdf_text(pdf_path, method="auto"):
         "\nInstall one of the following and re-run:\n" + matrix)
 
 
-_SENTENCE_END = re.compile(r'[.!?:;"”’)\]۔؟]\s*$')
+_SENTENCE_END = re.compile(r'[.!?:;"”’)\]۔؟]\d{0,2}\s*$')  # trailing digits = glued footnote marker
 _FOOTNOTE_LINE = re.compile(r"^\d{1,3}\s+\S")
+_LIST_LINE = re.compile(r"^(?:\d{1,3}[.)]|[-*•▪◦]|[a-z][.)]|[ivx]{1,4}[.)])\s+\S")
+_ARABIC_CHARS = re.compile(r"[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]")
+_QUOTE_START = re.compile(r'^["“‘\'«]')
+
+
+def _is_arabic_line(s):
+    letters = [ch for ch in s if ch.isalpha()]
+    return bool(letters) and sum(1 for ch in letters if _ARABIC_CHARS.match(ch)) >= 0.6 * len(letters)
+
+
+def _is_single_word_heading(s):
+    """A lone capitalised word such as 'Introduction' or 'Conclusion'."""
+    return bool(re.fullmatch(r"[A-Z][A-Za-z'\u2019-]{2,29}", s.strip()))
+
+
+def _typical_width(lines):
+    """Approximate full line width: 90th percentile of non-blank line lengths."""
+    lens = sorted(len(l.strip()) for l in lines if l.strip())
+    if not lens:
+        return 80
+    return max(40, lens[min(len(lens) - 1, int(len(lens) * 0.9))])
 
 
 def _is_heading_candidate(line):
@@ -284,7 +306,12 @@ def reflow_pdf_text(text, keep_page_numbers=False):
     if not keep_page_numbers:
         lines = strip_page_numbers("\n".join(lines)).split("\n")
 
-    # Join hard-wrapped lines into paragraphs.
+    # Join hard-wrapped lines into paragraphs. A line is a paragraph end when it
+    # is clearly shorter than the page width and ends a sentence, when the next
+    # line starts a list item / quotation / Arabic verse, or when it looks like
+    # a heading following a completed paragraph.
+    width = _typical_width(lines)
+    short = 0.7 * width
     paragraphs, buf = [], []
 
     def flush():
@@ -297,24 +324,38 @@ def reflow_pdf_text(text, keep_page_numbers=False):
         if not s:
             flush()
             continue
-        if _FOOTNOTE_LINE.match(s) and buf:
-            flush()
         if buf:
             prev = buf[-1]
+            prev_done = bool(_SENTENCE_END.search(prev))
             if prev.endswith("-") and len(prev) > 1 and prev[-2].isalpha() and s[:1].islower():
                 buf[-1] = prev[:-1] + s
                 continue
-            if _is_heading_candidate(s) and _SENTENCE_END.search(prev):
+            if _is_arabic_line(s) or _is_arabic_line(prev):
                 flush()
-                buf.append(s)
+            elif _LIST_LINE.match(s) or (_FOOTNOTE_LINE.match(s) and prev_done):
                 flush()
-                continue
+            elif _QUOTE_START.match(s) and prev.rstrip().endswith(":"):
+                flush()
+            elif prev_done and len(prev) < short:
+                flush()
+            elif _is_heading_candidate(s) and (prev_done or (len(buf) == 1 and _is_heading_candidate(prev))):
+                flush()
+        if _is_arabic_line(s):
+            buf.append(s)
+            flush()
+            continue
+        if not buf and len(s) < short and (_is_heading_candidate(s) or _is_single_word_heading(s)):
+            # Peek: a heading is a short standalone line; keep it separate from the
+            # following text by flushing immediately.
+            buf.append(s)
+            flush()
+            continue
         buf.append(s)
     flush()
 
     out = []
     for para in paragraphs:
-        if _is_heading_candidate(para) and len(para.split()) <= 12:
+        if (_is_heading_candidate(para) or _is_single_word_heading(para)) and len(para.split()) <= 12:
             title = para if not para.isupper() else para.title()
             out.append(f"## {title}")
         else:

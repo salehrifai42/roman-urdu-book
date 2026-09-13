@@ -229,3 +229,31 @@ class PandocRoundTripTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ReflowRealPdftotextOutputTests(unittest.TestCase):
+    """Regression: real pdftotext output of the baseline sample rendered by Chrome."""
+
+    def setUp(self):
+        fx = Path(__file__).resolve().parent / "fixtures" / "pdftotext_sample.txt"
+        self.out = convert.clean_markdown(convert.reflow_pdf_text(fx.read_text(encoding="utf-8")))
+
+    def test_headings_promoted(self):
+        for h in ("## The Easy Book of Tawhid", "## Introduction", "## The Meaning of Tawhid",
+                  "## Why Intentions Matter", "## Conclusion"):
+            self.assertIn(h + "\n", self.out, h)
+
+    def test_list_items_separate(self):
+        self.assertRegex(self.out, r"\n1\. Tawhid ar-Rububiyyah")
+        self.assertRegex(self.out, r"\n2\. Tawhid al-Uluhiyyah.*sacrifice\.\n")
+        self.assertRegex(self.out, r"\n3\. Tawhid al-Asma was-Sifat")
+
+    def test_arabic_and_quote_on_own_lines(self):
+        lines = self.out.splitlines()
+        arabic = [l for l in lines if convert._is_arabic_line(l)]
+        self.assertEqual(len(arabic), 1)
+        self.assertTrue(any(l.startswith("\u201cSay: He is Allah") and "(Surah Al-Ikhlas: 1)" in l for l in lines))
+
+    def test_paragraph_count_and_no_back_arrow(self):
+        self.assertNotIn("\u21a9", self.out)
+        self.assertGreaterEqual(self.out.count("\n\n"), 12)
