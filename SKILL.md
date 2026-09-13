@@ -2,7 +2,7 @@
 name: roman-urdu-book
 description: Translate an English book or long document (PDF/DOCX/EPUB/HTML/Markdown/TXT) into a Roman Urdu book using parallel sub-agents, a built-in Islamic-terms glossary, an editable style guide, a deterministic spelling/structure linter, and Markdown/HTML/DOCX/EPUB/PDF output. Use whenever the user asks to translate, convert, or render a book, chapter, or document into Roman Urdu / Romanised Urdu / "Urdu in English letters".
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Agent, AskUserQuestion
-metadata: {"openclaw":{"requires":{"bins":["python3","pandoc"]},"homepage":"https://github.com/<gh-user>/roman-urdu-book"},"version":"0.1.0"}
+metadata: {"openclaw":{"requires":{"bins":["python3","pandoc"]},"homepage":"https://github.com/salehrifai42/roman-urdu-book"},"version":"0.1.0"}
 ---
 
 # Roman Urdu Book

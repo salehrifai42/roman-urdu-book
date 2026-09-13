@@ -47,32 +47,32 @@ Abu Hurairah (Radiallahu Anhu) se riwayat hai ke ...
 
 ## Install
 
-Replace `<gh-user>` below with the GitHub account that hosts this repository.
+Replace `salehrifai42` below with the GitHub account that hosts this repository.
 
 ### Claude Code
 
 ```bash
-npx skills add <gh-user>/roman-urdu-book -a claude-code -g
+npx skills add salehrifai42/roman-urdu-book -a claude-code -g
 ```
 
 Or clone it by hand:
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/<gh-user>/roman-urdu-book.git ~/.claude/skills/roman-urdu-book
+git clone https://github.com/salehrifai42/roman-urdu-book.git ~/.claude/skills/roman-urdu-book
 ```
 
 ### Codex
 
 ```bash
-npx skills add <gh-user>/roman-urdu-book -a codex -g
+npx skills add salehrifai42/roman-urdu-book -a codex -g
 ```
 
 Or:
 
 ```bash
 mkdir -p ~/.agents/skills
-git clone https://github.com/<gh-user>/roman-urdu-book.git ~/.agents/skills/roman-urdu-book
+git clone https://github.com/salehrifai42/roman-urdu-book.git ~/.agents/skills/roman-urdu-book
 ```
 
 Restart the agent if the skill does not appear.
