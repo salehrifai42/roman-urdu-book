@@ -1,0 +1,37 @@
+# The Easy Book of Tawhid
+
+## Introduction
+
+All praise is due to Allah, the Lord of the worlds, and may peace and blessings be upon the Prophet (peace be upon him), his family and his companions. This short book explains Tawhid, the Oneness of Allah, in simple words so that a beginner can understand what it means and why it matters.
+
+Tawhid is the foundation of Islam. The Prophet (peace be upon him) spent thirteen years in Makkah calling people to it before any other duty was made obligatory. Abu Hurairah reported that the Prophet (peace be upon him) said that faith has more than seventy branches, and the highest of them is the statement that there is no god but Allah. Ibn Taymiyyah wrote that every prophet began his call with this one message, because worship is only accepted from a person who directs it to Allah alone.[^1]
+
+## The Meaning of Tawhid
+
+Tawhid means to single out Allah in everything that belongs to Him. Allah says in the Qur'an:
+
+قُلْ هُوَ اللَّهُ أَحَدٌ
+
+"Say: He is Allah, the One." (Surah Al-Ikhlas: 1)
+
+The scholars divide Tawhid into three categories:
+
+1. Tawhid ar-Rububiyyah: Allah alone creates, owns and controls everything.
+2. Tawhid al-Uluhiyyah: Allah alone deserves worship, such as prayer, supplication and sacrifice.
+3. Tawhid al-Asma was-Sifat: Allah alone has the perfect names and attributes that He affirmed for Himself.
+
+These three categories cannot be separated. A person who accepts that Allah is the Creator but prays to someone else has not fulfilled Tawhid. The polytheists of Makkah admitted that Allah alone sends rain and gives life and death, yet they called upon idols for help, so their belief in the Lordship of Allah did not save them.
+
+The opposite of Tawhid is Shirk, which means giving any share of what belongs to Allah to someone else. Shirk is the greatest sin, because it is an injustice against the right of the Creator. It can be open, like bowing to a grave, or hidden, like showing off in worship so that people praise you.
+
+## Why Intentions Matter
+
+The Prophet (peace be upon him) said: "Actions are judged by intentions, and every person will have what he intended." (Sahih Bukhari: 1)
+
+This hadith teaches that the value of a deed depends on the heart behind it. Tawhid is not only a statement of the tongue. It is sincerity in the heart, so that a Muslim prays, gives charity and seeks help from Allah alone, hoping for His reward and fearing His punishment. A small deed done with a sincere heart is heavier on the Scale than a mountain of deeds done for show.
+
+## Conclusion
+
+Learn Tawhid before anything else, teach it to your children, and ask Allah to keep you firm upon it until you meet Him. Whoever dies upon Tawhid will enter Paradise, and whoever dies upon Shirk will not.
+
+[^1]: See Ibn Taymiyyah, Majmu al-Fatawa, volume 1, page 20.

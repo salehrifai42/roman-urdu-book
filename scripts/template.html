@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="$if(lang)$$lang$$else$ur-Latn$endif$" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="roman-urdu-book">
+<title>$if(title-meta)$$title-meta$$else$$title$$endif$</title>
+$if(author-meta)$
+<meta name="author" content="$for(author-meta)$$author-meta$$sep$, $endfor$">
+$endif$
+$if(description)$<meta name="description" content="$description$">$endif$
+<style>
+$css_inline$
+/* The .front-matter block is for DOCX/EPUB; the cover section below replaces it here. */
+.front-matter { display: none; }
+</style>
+</head>
+<body>
+<section class="cover" id="cover">
+$if(cover-image)$
+  <img class="cover-image" src="$cover-image$" alt="">
+$endif$
+  <h1 class="book-title">$title$</h1>
+$if(subtitle)$
+  <p class="book-subtitle">$subtitle$</p>
+$else$
+  <p class="book-subtitle">Roman Urdu Tarjuma</p>
+$endif$
+$if(author)$
+  <p class="book-meta"><span class="label">Taleef:</span> $for(author)$$author$$sep$, $endfor$</p>
+$endif$
+$if(translator)$
+  <p class="book-meta"><span class="label">Tarjuma:</span> $translator$</p>
+$endif$
+$if(publisher)$
+  <p class="book-meta book-publisher">$publisher$</p>
+$endif$
+$if(date)$
+  <p class="book-meta book-date">$date$</p>
+$endif$
+</section>
+$if(toc)$
+<nav class="toc" id="toc" aria-label="Fehrist-e-Mazaameen">
+  <h2>Fehrist-e-Mazaameen</h2>
+$toc$
+</nav>
+<button class="toc-toggle" type="button" aria-label="Fehrist" aria-controls="toc" onclick="document.body.classList.toggle('toc-open')">&#9776;</button>
+$endif$
+<main class="book" id="book">
+$body$
+</main>
+<script>
+(function () {
+  var toc = document.getElementById('toc');
+  if (!toc) return;
+  toc.addEventListener('click', function (e) {
+    if (e.target && e.target.tagName === 'A') { document.body.classList.remove('toc-open'); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { document.body.classList.remove('toc-open'); }
+  });
+})();
+</script>
+</body>
+</html>

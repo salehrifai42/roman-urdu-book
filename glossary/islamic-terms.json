@@ -1,0 +1,6253 @@
+{
+  "version": 1,
+  "name": "islamic-terms",
+  "detection": {
+    "min_distinct_terms": 8,
+    "min_hits_per_1000_words": 3.0,
+    "strong_terms": [
+      "Allah",
+      "Qur'an",
+      "Quran",
+      "hadith",
+      "Prophet Muhammad",
+      "Sunnah",
+      "Tawhid",
+      "Tawheed",
+      "Shirk",
+      "Sahabah",
+      "Companions of the Prophet",
+      "peace be upon him",
+      "Sahih Bukhari",
+      "Sahih Muslim",
+      "Islam",
+      "Muslims"
+    ]
+  },
+  "honorifics": [
+    {
+      "id": "allah",
+      "triggers": [
+        "Allah",
+        "God",
+        "the Almighty",
+        "Almighty God",
+        "the Lord",
+        "(SWT)",
+        "Subhanahu wa Ta'ala",
+        "the Exalted",
+        "the Most High"
+      ],
+      "target": "Allah Ta'ala",
+      "subject_ru": "Allah",
+      "note": "Use 'Allah Ta'ala' in narrative; plain 'Allah' inside quoted verses/hadith and in fixed phrases (Alhamdulillah, Insha'Allah, La ilaha illallah). 'Subhanahu wa Ta'ala' only when the source stresses it."
+    },
+    {
+      "id": "prophet_muhammad",
+      "triggers": [
+        "the Prophet",
+        "the Messenger",
+        "the Messenger of Allah",
+        "Allah's Messenger",
+        "the Prophet Muhammad",
+        "Muhammad (peace be upon him)",
+        "(PBUH)",
+        "(SAW)",
+        "(SAWS)",
+        "(pbuh)",
+        "ﷺ",
+        "peace be upon him",
+        "peace and blessings be upon him",
+        "the Holy Prophet",
+        "the Noble Prophet"
+      ],
+      "target": "(Sallallahu Alaihi Wasallam)",
+      "subject_ru": "Rasoolullah",
+      "note": "Write 'Rasoolullah (Sallallahu Alaihi Wasallam)' or 'Nabi (Sallallahu Alaihi Wasallam)' or 'Aap (Sallallahu Alaihi Wasallam)'; in full, in parentheses, after every mention; never SAW/PBUH."
+    },
+    {
+      "id": "other_prophets",
+      "triggers": [
+        "Prophet",
+        "(AS)",
+        "(peace be upon him)",
+        "(upon him be peace)"
+      ],
+      "target": "(Alaihissalam)",
+      "female_target": "(Alaihassalam)",
+      "plural_target": "(Alaihimussalam)",
+      "note": "After the name of every prophet other than Muhammad; Maryam takes (Alaihassalam); 'Ambiya-e-Kiraam (Alaihimussalam)' for the group."
+    },
+    {
+      "id": "companion",
+      "triggers": [
+        "(RA)",
+        "(may Allah be pleased with him)",
+        "(may Allah be pleased with her)",
+        "(may Allah be pleased with them)",
+        "(radiyallahu anhu)"
+      ],
+      "target": "(Radiallahu Anhu)",
+      "female_target": "(Radiallahu Anha)",
+      "plural_target": "(Radiallahu Anhum)",
+      "dual_target": "(Radiallahu Anhuma)",
+      "note": "Male companion: Anhu; female: Anha; two: Anhuma; group: Anhum; group of women: Anhunna."
+    },
+    {
+      "id": "scholar_deceased",
+      "triggers": [
+        "(may Allah have mercy on him)",
+        "(rahimahullah)",
+        "(RH)",
+        "(d.",
+        "(may Allah have mercy upon him)"
+      ],
+      "target": "(Rahimahullah)",
+      "plural_target": "(Rahimahumullah)",
+      "note": "After the name of every deceased scholar or righteous person who is not a prophet or companion."
+    },
+    {
+      "id": "scholar_living",
+      "triggers": [
+        "(may Allah preserve him)",
+        "(hafidhahullah)",
+        "(hafizahullah)"
+      ],
+      "target": "(Hafizahullah)",
+      "plural_target": "(Hafizahumullah)",
+      "note": "Only when the source indicates the scholar is living or uses this honorific."
+    }
+  ],
+  "terms": [
+    {
+      "source": "Tawhid",
+      "aliases": [
+        "Tawheed",
+        "Tauhid",
+        "Tauheed",
+        "Islamic monotheism",
+        "Oneness of Allah",
+        "monotheism"
+      ],
+      "target": "Tauheed",
+      "category": "aqeedah",
+      "honorific": "",
+      "note": "keep as term; explain once if the source explains it"
+    },
+    {
+      "source": "Tawhid ar-Rububiyyah",
+      "aliases": [
+        "Tawhid al-Rububiyyah",
+        "Tawheed ar-Rububiyyah",
+        "Tawhid of Lordship",
+        "Oneness of Lordship"
+      ],
+      "target": "Tauheed-e-Rububiyat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tawhid al-Uluhiyyah",
+      "aliases": [
+        "Tawheed al-Uluhiyyah",
+        "Tawhid al-Ibadah",
+        "Tawhid of Worship",
+        "Oneness of Worship"
+      ],
+      "target": "Tauheed-e-Uluhiyat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tawhid al-Asma was-Sifat",
+      "aliases": [
+        "Tawhid al-Asma wa al-Sifat",
+        "Tawheed al-Asma was-Sifat",
+        "Oneness of Names and Attributes",
+        "Tawhid of Names and Attributes"
+      ],
+      "target": "Tauheed-e-Asma wa Sifaat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Shirk",
+      "aliases": [
+        "polytheism",
+        "associating partners with Allah",
+        "idolatry"
+      ],
+      "target": "Shirk",
+      "category": "aqeedah",
+      "honorific": "",
+      "note": "may gloss once: Shirk (Allah ke saath kisi ko shareek karna)"
+    },
+    {
+      "source": "Shirk al-Akbar",
+      "aliases": [
+        "major shirk",
+        "greater shirk",
+        "Shirk Akbar"
+      ],
+      "target": "Shirk-e-Akbar",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Shirk al-Asghar",
+      "aliases": [
+        "minor shirk",
+        "lesser shirk",
+        "Shirk Asghar"
+      ],
+      "target": "Shirk-e-Asghar",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Kufr",
+      "aliases": [
+        "disbelief",
+        "unbelief"
+      ],
+      "target": "Kufr",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Nifaq",
+      "aliases": [
+        "hypocrisy"
+      ],
+      "target": "Nifaq",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Bid'ah",
+      "aliases": [
+        "Bidah",
+        "Bid'a",
+        "Bidat",
+        "religious innovation",
+        "innovation in religion"
+      ],
+      "target": "Bid'at",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Taghut",
+      "aliases": [
+        "Taghoot",
+        "Taaghoot",
+        "false deities",
+        "false gods"
+      ],
+      "target": "Taghoot",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Wala wal-Bara",
+      "aliases": [
+        "Al-Wala' wal-Bara'",
+        "Wala and Bara",
+        "loyalty and disavowal",
+        "allegiance and disassociation"
+      ],
+      "target": "Al-Wala wal-Bara",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Qadr",
+      "aliases": [
+        "Qada wal-Qadr",
+        "Al-Qada wal-Qadar",
+        "predestination",
+        "divine decree",
+        "divine preordainment"
+      ],
+      "target": "Taqdeer",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Iman",
+      "aliases": [
+        "Eman",
+        "Emaan",
+        "Imaan",
+        "faith"
+      ],
+      "target": "Imaan",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ihsan",
+      "aliases": [
+        "Ehsan",
+        "excellence in worship"
+      ],
+      "target": "Ehsan",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Islam",
+      "aliases": [],
+      "target": "Islam",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ghayb",
+      "aliases": [
+        "Ghaib",
+        "the unseen"
+      ],
+      "target": "Ghaib",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ruqyah",
+      "aliases": [
+        "Ruqya",
+        "Ruqyah shar'iyyah"
+      ],
+      "target": "Ruqya",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tamimah",
+      "aliases": [
+        "Tamaim",
+        "amulet",
+        "amulets",
+        "talisman",
+        "talismans",
+        "Ta'weez"
+      ],
+      "target": "Taweez",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tabarruk",
+      "aliases": [
+        "seeking blessings"
+      ],
+      "target": "Tabarruk",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tawassul",
+      "aliases": [
+        "seeking a means of nearness",
+        "intercession through means"
+      ],
+      "target": "Tawassul",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Shafa'ah",
+      "aliases": [
+        "Shafa'a",
+        "Shafaah",
+        "intercession"
+      ],
+      "target": "Shafa'at",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Nadhr",
+      "aliases": [
+        "Nazr",
+        "religious vow",
+        "vow to Allah",
+        "vows"
+      ],
+      "target": "Nazr",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Dhabh",
+      "aliases": [
+        "Zabh",
+        "ritual slaughter",
+        "sacrificial slaughter"
+      ],
+      "target": "Zabah",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Sihr",
+      "aliases": [
+        "magic",
+        "sorcery",
+        "witchcraft",
+        "black magic"
+      ],
+      "target": "Jaadu",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Kahanah",
+      "aliases": [
+        "soothsaying",
+        "fortune-telling",
+        "fortune telling",
+        "divination"
+      ],
+      "target": "Kahanat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Riya",
+      "aliases": [
+        "Riyaa",
+        "showing off in worship",
+        "ostentation"
+      ],
+      "target": "Riya",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ikhlas",
+      "aliases": [
+        "sincerity"
+      ],
+      "target": "Ikhlas",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tawakkul",
+      "aliases": [
+        "reliance upon Allah",
+        "reliance on Allah",
+        "trust in Allah"
+      ],
+      "target": "Tawakkul",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Khawf",
+      "aliases": [
+        "Khauf",
+        "fear of Allah"
+      ],
+      "target": "Khauf",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Raja",
+      "aliases": [
+        "Rajaa",
+        "hope in Allah"
+      ],
+      "target": "Umeed",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Mahabbah",
+      "aliases": [
+        "Mahabba",
+        "love of Allah"
+      ],
+      "target": "Muhabbat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Taqwa",
+      "aliases": [
+        "Taqwaa",
+        "piety",
+        "God-consciousness",
+        "fear of God"
+      ],
+      "target": "Taqwa",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Sunnah",
+      "aliases": [
+        "Sunna",
+        "the Sunnah",
+        "Prophetic Sunnah"
+      ],
+      "target": "Sunnah",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Aqidah",
+      "aliases": [
+        "Aqeedah",
+        "Aqida",
+        "creed",
+        "Islamic creed",
+        "belief system"
+      ],
+      "target": "Aqeedah",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Manhaj",
+      "aliases": [
+        "methodology"
+      ],
+      "target": "Manhaj",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Salaf",
+      "aliases": [
+        "Salaf as-Salih",
+        "Salaf-us-Salih",
+        "pious predecessors",
+        "righteous predecessors",
+        "the early generations"
+      ],
+      "target": "Salaf",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Salafi",
+      "aliases": [
+        "Salafis",
+        "Salafiyyah",
+        "Salafiyya"
+      ],
+      "target": "Salafi",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ahl as-Sunnah wal-Jama'ah",
+      "aliases": [
+        "Ahl al-Sunnah wa al-Jama'ah",
+        "Ahlus Sunnah wal Jama'ah",
+        "Ahl as-Sunnah",
+        "Ahlus-Sunnah",
+        "people of the Sunnah"
+      ],
+      "target": "Ahl-e-Sunnat wal-Jama'at",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ahl al-Hadith",
+      "aliases": [
+        "Ahl al-Hadeeth",
+        "Ahlul Hadith",
+        "people of hadith"
+      ],
+      "target": "Ahl-e-Hadees",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Khawarij",
+      "aliases": [
+        "Kharijites",
+        "Khariji",
+        "Khawaarij"
+      ],
+      "target": "Khawarij",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Murji'ah",
+      "aliases": [
+        "Murjiah",
+        "Murjites",
+        "Murji'a"
+      ],
+      "target": "Murjia",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Mu'tazilah",
+      "aliases": [
+        "Mutazilah",
+        "Mutazila",
+        "Mu'tazilites"
+      ],
+      "target": "Mu'tazila",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Rafidah",
+      "aliases": [
+        "Rawafid",
+        "Rafidis",
+        "Rafidhah"
+      ],
+      "target": "Rawafiz",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Shia",
+      "aliases": [
+        "Shi'a",
+        "Shi'ah",
+        "Shiites",
+        "Shi'ite"
+      ],
+      "target": "Shia",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Sufi",
+      "aliases": [
+        "Sufis",
+        "Sufism",
+        "Tasawwuf"
+      ],
+      "target": "Sufi",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Jahmiyyah",
+      "aliases": [
+        "Jahmiyya",
+        "Jahmites"
+      ],
+      "target": "Jahmiya",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ash'ari",
+      "aliases": [
+        "Ash'aris",
+        "Asharis",
+        "Ash'ariyyah",
+        "Ash'arites"
+      ],
+      "target": "Ash'ari",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Nawaqid al-Islam",
+      "aliases": [
+        "Nawaqid al-Islaam",
+        "nullifiers of Islam",
+        "the ten nullifiers"
+      ],
+      "target": "Nawaqiz-e-Islam",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Muwahhid",
+      "aliases": [
+        "Muwahhideen",
+        "monotheist",
+        "monotheists"
+      ],
+      "target": "Muwahhid",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Mushrik",
+      "aliases": [
+        "Mushrikeen",
+        "Mushrikin",
+        "polytheist",
+        "polytheists",
+        "idolaters"
+      ],
+      "target": "Mushrik",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Kafir",
+      "aliases": [
+        "Kaafir",
+        "Kuffar",
+        "Kuffaar",
+        "disbeliever",
+        "disbelievers",
+        "unbeliever",
+        "unbelievers"
+      ],
+      "target": "Kafir",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Munafiq",
+      "aliases": [
+        "Munafiqeen",
+        "Munafiqun",
+        "hypocrite",
+        "hypocrites"
+      ],
+      "target": "Munafiq",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Murtadd",
+      "aliases": [
+        "Murtad",
+        "apostate",
+        "apostates"
+      ],
+      "target": "Murtad",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Takfir",
+      "aliases": [
+        "Takfeer",
+        "declaring someone a disbeliever",
+        "excommunication"
+      ],
+      "target": "Takfeer",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ta'til",
+      "aliases": [
+        "Tateel",
+        "negation of Allah's attributes",
+        "denial of the attributes"
+      ],
+      "target": "Ta'teel",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tashbih",
+      "aliases": [
+        "Tashbeeh",
+        "anthropomorphism",
+        "likening Allah to creation"
+      ],
+      "target": "Tashbeeh",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tahrif",
+      "aliases": [
+        "Tahreef",
+        "distortion of texts"
+      ],
+      "target": "Tahreef",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Takyif",
+      "aliases": [
+        "Takyeef",
+        "asking how of the attributes"
+      ],
+      "target": "Takyeef",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tamthil",
+      "aliases": [
+        "Tamseel",
+        "drawing likeness to Allah"
+      ],
+      "target": "Tamseel",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Istiwa",
+      "aliases": [
+        "Istawa",
+        "rising over the Throne",
+        "Allah's rising over the Throne"
+      ],
+      "target": "Istiwa",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Sifat",
+      "aliases": [
+        "Sifaat",
+        "attributes of Allah",
+        "divine attributes"
+      ],
+      "target": "Sifaat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Hidayah",
+      "aliases": [
+        "Hidaya",
+        "guidance from Allah",
+        "divine guidance"
+      ],
+      "target": "Hidayat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Fitrah",
+      "aliases": [
+        "Fitra",
+        "natural disposition",
+        "innate nature"
+      ],
+      "target": "Fitrat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Jannah",
+      "aliases": [
+        "Jannat",
+        "Paradise",
+        "the Garden"
+      ],
+      "target": "Jannat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Jahannam",
+      "aliases": [
+        "Hellfire",
+        "the Fire",
+        "Hell"
+      ],
+      "target": "Jahannam",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Qiyamah",
+      "aliases": [
+        "Yawm al-Qiyamah",
+        "Day of Judgement",
+        "Day of Judgment",
+        "Day of Resurrection",
+        "the Last Day",
+        "Judgement Day"
+      ],
+      "target": "Qiyamat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Akhirah",
+      "aliases": [
+        "Aakhirah",
+        "the Hereafter",
+        "afterlife",
+        "the next life"
+      ],
+      "target": "Aakhirat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Dunya",
+      "aliases": [
+        "this world",
+        "worldly life"
+      ],
+      "target": "Duniya",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Barzakh",
+      "aliases": [
+        "the intermediate realm",
+        "life of the grave"
+      ],
+      "target": "Barzakh",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Sirat",
+      "aliases": [
+        "As-Sirat",
+        "the Bridge over Hell",
+        "the Bridge"
+      ],
+      "target": "Pul Sirat",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Mizan",
+      "aliases": [
+        "Meezan",
+        "the Scale",
+        "the Balance of deeds"
+      ],
+      "target": "Meezan",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Hawd",
+      "aliases": [
+        "Al-Hawd",
+        "Hawd al-Kawthar",
+        "the Pool",
+        "the Fountain of Kawthar"
+      ],
+      "target": "Hauz-e-Kausar",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Malaikah",
+      "aliases": [
+        "Mala'ikah",
+        "angels",
+        "the angels"
+      ],
+      "target": "Farishte",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Jinn",
+      "aliases": [
+        "jinns",
+        "the jinn",
+        "Jinnat"
+      ],
+      "target": "Jinn",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Shaytan",
+      "aliases": [
+        "Shaitan",
+        "Shaytaan",
+        "Satan",
+        "the devil",
+        "devils"
+      ],
+      "target": "Shaitan",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Iblis",
+      "aliases": [
+        "Iblees"
+      ],
+      "target": "Iblees",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Dajjal",
+      "aliases": [
+        "the Antichrist",
+        "Al-Masih ad-Dajjal",
+        "Maseeh ad-Dajjal"
+      ],
+      "target": "Dajjal",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ya'juj wa Ma'juj",
+      "aliases": [
+        "Yajuj and Majuj",
+        "Gog and Magog",
+        "Ya'juj and Ma'juj"
+      ],
+      "target": "Yajooj Majooj",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Mahdi",
+      "aliases": [
+        "Al-Mahdi",
+        "Imam Mahdi"
+      ],
+      "target": "Mahdi",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Hadith",
+      "aliases": [
+        "hadeeth",
+        "hadiths",
+        "ahadith",
+        "ahaadeeth",
+        "Prophetic traditions",
+        "Prophetic narrations"
+      ],
+      "target": "Hadees",
+      "category": "aqeedah",
+      "honorific": "",
+      "note": "plural: Ahadees"
+    },
+    {
+      "source": "Qur'an",
+      "aliases": [
+        "Quran",
+        "Koran",
+        "Qur'aan",
+        "the Quran",
+        "the Qur'an",
+        "the Holy Quran",
+        "the Noble Quran"
+      ],
+      "target": "Qur'an",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ulama",
+      "aliases": [
+        "Ulema",
+        "the scholars",
+        "Islamic scholars",
+        "religious scholars"
+      ],
+      "target": "Ulama",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Fitnah",
+      "aliases": [
+        "Fitna",
+        "tribulation",
+        "trials and tribulations"
+      ],
+      "target": "Fitna",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Ayah",
+      "aliases": [
+        "Ayat",
+        "Aayah",
+        "verse of the Quran",
+        "Quranic verse"
+      ],
+      "target": "Ayat",
+      "category": "aqeedah",
+      "honorific": "",
+      "note": "plural: Aayaat"
+    },
+    {
+      "source": "Surah",
+      "aliases": [
+        "Surat",
+        "Soorah",
+        "chapter of the Quran"
+      ],
+      "target": "Surah",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Tafsir",
+      "aliases": [
+        "Tafseer",
+        "Quranic exegesis",
+        "exegesis"
+      ],
+      "target": "Tafseer",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Sahih",
+      "aliases": [
+        "Saheeh",
+        "authentic hadith",
+        "authentic narration"
+      ],
+      "target": "Sahih",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Da'if",
+      "aliases": [
+        "Daeef",
+        "Dhaeef",
+        "Da'eef",
+        "weak hadith",
+        "weak narration"
+      ],
+      "target": "Zaeef",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Hasan",
+      "aliases": [
+        "Hasan hadith"
+      ],
+      "target": "Hasan",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Mawdu'",
+      "aliases": [
+        "Mawdoo",
+        "Mawdu",
+        "fabricated hadith",
+        "fabricated narration"
+      ],
+      "target": "Mauzu",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Isnad",
+      "aliases": [
+        "Sanad",
+        "chain of narration",
+        "chain of narrators"
+      ],
+      "target": "Isnad",
+      "category": "aqeedah",
+      "honorific": ""
+    },
+    {
+      "source": "Salah",
+      "aliases": [
+        "Salat",
+        "Salaat",
+        "Salaah",
+        "the prayer",
+        "ritual prayer",
+        "five daily prayers"
+      ],
+      "target": "Namaz",
+      "category": "fiqh_ibadah",
+      "honorific": "",
+      "note": "use Salah only if the source stresses the Arabic term"
+    },
+    {
+      "source": "Wudu",
+      "aliases": [
+        "Wudhu",
+        "Wudoo",
+        "ablution"
+      ],
+      "target": "Wuzu",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ghusl",
+      "aliases": [
+        "ritual bath",
+        "full ablution"
+      ],
+      "target": "Ghusl",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Tayammum",
+      "aliases": [
+        "dry ablution"
+      ],
+      "target": "Tayammum",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Zakat",
+      "aliases": [
+        "Zakah",
+        "Zakaat",
+        "obligatory charity",
+        "alms tax"
+      ],
+      "target": "Zakat",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Sawm",
+      "aliases": [
+        "Siyam",
+        "Siyaam",
+        "fasting",
+        "the fast"
+      ],
+      "target": "Roza",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Hajj",
+      "aliases": [
+        "the pilgrimage",
+        "pilgrimage to Makkah"
+      ],
+      "target": "Hajj",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Umrah",
+      "aliases": [
+        "Umra",
+        "the lesser pilgrimage",
+        "minor pilgrimage"
+      ],
+      "target": "Umrah",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Qiblah",
+      "aliases": [
+        "Qibla",
+        "direction of prayer"
+      ],
+      "target": "Qibla",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Masjid",
+      "aliases": [
+        "mosque",
+        "mosques",
+        "Masaajid"
+      ],
+      "target": "Masjid",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Jumu'ah",
+      "aliases": [
+        "Jumuah",
+        "Juma",
+        "Friday prayer",
+        "Friday congregational prayer"
+      ],
+      "target": "Jumu'ah",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Eid",
+      "aliases": [
+        "Id",
+        "the festival"
+      ],
+      "target": "Eid",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Eid al-Fitr",
+      "aliases": [
+        "Eid ul-Fitr",
+        "Eid al Fitr",
+        "festival of breaking the fast"
+      ],
+      "target": "Eid-ul-Fitr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Eid al-Adha",
+      "aliases": [
+        "Eid ul-Adha",
+        "Eid al Adha",
+        "festival of sacrifice"
+      ],
+      "target": "Eid-ul-Azha",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Udhiyah",
+      "aliases": [
+        "Qurbani",
+        "sacrificial animal",
+        "Eid sacrifice"
+      ],
+      "target": "Qurbani",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Nikah",
+      "aliases": [
+        "Islamic marriage",
+        "marriage contract"
+      ],
+      "target": "Nikah",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Talaq",
+      "aliases": [
+        "Islamic divorce",
+        "repudiation"
+      ],
+      "target": "Talaq",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Halal",
+      "aliases": [
+        "Halaal",
+        "lawful",
+        "permissible"
+      ],
+      "target": "Halal",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Haram",
+      "aliases": [
+        "Haraam",
+        "unlawful",
+        "forbidden",
+        "prohibited"
+      ],
+      "target": "Haram",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Makruh",
+      "aliases": [
+        "Makrooh",
+        "disliked",
+        "discouraged"
+      ],
+      "target": "Makrooh",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Mustahabb",
+      "aliases": [
+        "Mustahab",
+        "recommended",
+        "commendable"
+      ],
+      "target": "Mustahab",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Mubah",
+      "aliases": [
+        "Mubaah",
+        "permitted",
+        "neutral act"
+      ],
+      "target": "Mubah",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Fard",
+      "aliases": [
+        "Fardh",
+        "Farz",
+        "obligatory",
+        "compulsory"
+      ],
+      "target": "Farz",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Wajib",
+      "aliases": [
+        "Waajib",
+        "binding obligation"
+      ],
+      "target": "Wajib",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Fajr",
+      "aliases": [
+        "dawn prayer",
+        "morning prayer"
+      ],
+      "target": "Fajr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Zuhr",
+      "aliases": [
+        "Dhuhr",
+        "noon prayer",
+        "midday prayer"
+      ],
+      "target": "Zuhr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Asr",
+      "aliases": [
+        "afternoon prayer"
+      ],
+      "target": "Asr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Maghrib",
+      "aliases": [
+        "sunset prayer",
+        "evening prayer"
+      ],
+      "target": "Maghrib",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Isha",
+      "aliases": [
+        "Ishaa",
+        "night prayer"
+      ],
+      "target": "Isha",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Witr",
+      "aliases": [
+        "Witr prayer"
+      ],
+      "target": "Witr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Tahajjud",
+      "aliases": [
+        "Qiyam al-Layl",
+        "night vigil prayer",
+        "late night prayer"
+      ],
+      "target": "Tahajjud",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Adhan",
+      "aliases": [
+        "Azan",
+        "Adhaan",
+        "call to prayer"
+      ],
+      "target": "Azaan",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Iqamah",
+      "aliases": [
+        "Iqama",
+        "Iqamat",
+        "second call to prayer"
+      ],
+      "target": "Iqamat",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Khutbah",
+      "aliases": [
+        "Khutba",
+        "Friday sermon",
+        "sermon"
+      ],
+      "target": "Khutba",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Dhikr",
+      "aliases": [
+        "Zikr",
+        "Thikr",
+        "remembrance of Allah",
+        "remembrance"
+      ],
+      "target": "Zikr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Du'a",
+      "aliases": [
+        "Dua",
+        "Duaa",
+        "supplication",
+        "supplications",
+        "invocation"
+      ],
+      "target": "Dua",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Tasbih",
+      "aliases": [
+        "Tasbeeh",
+        "glorification of Allah"
+      ],
+      "target": "Tasbeeh",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Istighfar",
+      "aliases": [
+        "seeking forgiveness"
+      ],
+      "target": "Istighfar",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Sadaqah",
+      "aliases": [
+        "Sadaqa",
+        "voluntary charity",
+        "charity"
+      ],
+      "target": "Sadqa",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ramadan",
+      "aliases": [
+        "Ramadhan",
+        "Ramazan",
+        "Ramzan",
+        "the month of fasting"
+      ],
+      "target": "Ramzan",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Iftar",
+      "aliases": [
+        "Iftaar",
+        "breaking the fast"
+      ],
+      "target": "Iftar",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Suhur",
+      "aliases": [
+        "Sehri",
+        "Suhoor",
+        "pre-dawn meal"
+      ],
+      "target": "Sehri",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "I'tikaf",
+      "aliases": [
+        "Itikaf",
+        "Aitikaf",
+        "seclusion in the mosque"
+      ],
+      "target": "Aitikaf",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Laylat al-Qadr",
+      "aliases": [
+        "Laylatul Qadr",
+        "Lailatul Qadr",
+        "the Night of Decree",
+        "Night of Power"
+      ],
+      "target": "Lailatul Qadr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ihram",
+      "aliases": [
+        "Ehram",
+        "pilgrim's garb",
+        "state of Ihram"
+      ],
+      "target": "Ehram",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Tawaf",
+      "aliases": [
+        "Tawaaf",
+        "circumambulation"
+      ],
+      "target": "Tawaf",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Sa'i",
+      "aliases": [
+        "Sa'ee",
+        "Saee",
+        "walking between Safa and Marwah"
+      ],
+      "target": "Sa'ee",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ashura",
+      "aliases": [
+        "Aashoora",
+        "the tenth of Muharram"
+      ],
+      "target": "Ashura",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Muharram",
+      "aliases": [],
+      "target": "Muharram",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Hijrah",
+      "aliases": [
+        "Hijra",
+        "Hijrat",
+        "the migration",
+        "emigration to Madinah"
+      ],
+      "target": "Hijrat",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Janazah",
+      "aliases": [
+        "Janaza",
+        "funeral prayer",
+        "funeral"
+      ],
+      "target": "Janaza",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Qabr",
+      "aliases": [
+        "the grave",
+        "graves"
+      ],
+      "target": "Qabr",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Miswak",
+      "aliases": [
+        "Siwak",
+        "tooth-stick"
+      ],
+      "target": "Miswak",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Hijab",
+      "aliases": [
+        "Islamic veil",
+        "head covering"
+      ],
+      "target": "Hijab",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Mahram",
+      "aliases": [
+        "Mahaarim",
+        "unmarriageable kin"
+      ],
+      "target": "Mahram",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Riba",
+      "aliases": [
+        "usury",
+        "interest on loans"
+      ],
+      "target": "Riba",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Fiqh",
+      "aliases": [
+        "Islamic jurisprudence",
+        "jurisprudence"
+      ],
+      "target": "Fiqh",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Fatwa",
+      "aliases": [
+        "Fatawa",
+        "religious verdict",
+        "legal verdict",
+        "religious ruling"
+      ],
+      "target": "Fatwa",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ijma",
+      "aliases": [
+        "Ijmaa",
+        "scholarly consensus",
+        "consensus of the scholars"
+      ],
+      "target": "Ijma",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Qiyas",
+      "aliases": [
+        "Qiyaas",
+        "analogical reasoning",
+        "analogy in law"
+      ],
+      "target": "Qiyas",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ijtihad",
+      "aliases": [
+        "Ijtihaad",
+        "independent reasoning"
+      ],
+      "target": "Ijtihad",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Madhhab",
+      "aliases": [
+        "Madhab",
+        "Mazhab",
+        "school of thought",
+        "school of jurisprudence",
+        "school of law"
+      ],
+      "target": "Mazhab",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Shari'ah",
+      "aliases": [
+        "Sharia",
+        "Shariah",
+        "Shari'a",
+        "Islamic law",
+        "divine law"
+      ],
+      "target": "Shariat",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Tawbah",
+      "aliases": [
+        "Tauba",
+        "Tawba",
+        "repentance",
+        "sincere repentance"
+      ],
+      "target": "Tauba",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Khushu",
+      "aliases": [
+        "Khushoo",
+        "humility in prayer",
+        "concentration in prayer"
+      ],
+      "target": "Khushu",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Sajdah",
+      "aliases": [
+        "Sajda",
+        "Sujud",
+        "prostration"
+      ],
+      "target": "Sajda",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ruku",
+      "aliases": [
+        "Rukoo",
+        "bowing in prayer"
+      ],
+      "target": "Ruku",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Tashahhud",
+      "aliases": [
+        "sitting testimony in prayer"
+      ],
+      "target": "Tashahhud",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Taslim",
+      "aliases": [
+        "Tasleem",
+        "the final salutation of prayer"
+      ],
+      "target": "Salaam phaerna",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Jama'ah",
+      "aliases": [
+        "Jamaat",
+        "congregation",
+        "congregational prayer"
+      ],
+      "target": "Jama'at",
+      "category": "fiqh_ibadah",
+      "honorific": ""
+    },
+    {
+      "source": "Ar-Rahman",
+      "aliases": [
+        "Al-Rahman",
+        "Ar-Rahmaan",
+        "The Most Gracious",
+        "The Entirely Merciful",
+        "The Beneficent"
+      ],
+      "target": "Ar-Rahman",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Ar-Rahim",
+      "aliases": [
+        "Al-Rahim",
+        "Ar-Raheem",
+        "The Most Merciful",
+        "The Especially Merciful"
+      ],
+      "target": "Ar-Raheem",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Malik",
+      "aliases": [
+        "The King",
+        "The Sovereign"
+      ],
+      "target": "Al-Malik",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Quddus",
+      "aliases": [
+        "The Most Holy",
+        "The Most Pure"
+      ],
+      "target": "Al-Quddoos",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "As-Salam",
+      "aliases": [
+        "The Source of Peace",
+        "The Flawless"
+      ],
+      "target": "As-Salaam",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Mu'min",
+      "aliases": [
+        "The Giver of Security",
+        "The Granter of Security"
+      ],
+      "target": "Al-Mu'min",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Muhaymin",
+      "aliases": [
+        "The Guardian",
+        "The Overseer"
+      ],
+      "target": "Al-Muhaimin",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Aziz",
+      "aliases": [
+        "The Almighty",
+        "The All-Mighty",
+        "The Exalted in Might"
+      ],
+      "target": "Al-Azeez",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Jabbar",
+      "aliases": [
+        "The Compeller",
+        "The Irresistible"
+      ],
+      "target": "Al-Jabbar",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Mutakabbir",
+      "aliases": [
+        "The Supreme",
+        "The Majestic"
+      ],
+      "target": "Al-Mutakabbir",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Khaliq",
+      "aliases": [
+        "The Creator"
+      ],
+      "target": "Al-Khaliq",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Bari",
+      "aliases": [
+        "Al-Bari'",
+        "The Originator",
+        "The Evolver"
+      ],
+      "target": "Al-Bari",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Musawwir",
+      "aliases": [
+        "The Fashioner",
+        "The Shaper of Forms"
+      ],
+      "target": "Al-Musawwir",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Ghaffar",
+      "aliases": [
+        "The Ever-Forgiving",
+        "The All-Forgiving"
+      ],
+      "target": "Al-Ghaffar",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Qahhar",
+      "aliases": [
+        "The Subduer",
+        "The All-Prevailing"
+      ],
+      "target": "Al-Qahhar",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Wahhab",
+      "aliases": [
+        "The Bestower",
+        "The Giver of Gifts"
+      ],
+      "target": "Al-Wahhab",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Ar-Razzaq",
+      "aliases": [
+        "Al-Razzaq",
+        "The Provider",
+        "The Sustainer"
+      ],
+      "target": "Ar-Razzaq",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Fattah",
+      "aliases": [
+        "The Opener",
+        "The Judge"
+      ],
+      "target": "Al-Fattah",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Alim",
+      "aliases": [
+        "Al-Aleem",
+        "The All-Knowing",
+        "The Omniscient"
+      ],
+      "target": "Al-Aleem",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Latif",
+      "aliases": [
+        "Al-Lateef",
+        "The Subtle One",
+        "The Most Gentle"
+      ],
+      "target": "Al-Lateef",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Khabir",
+      "aliases": [
+        "Al-Khabeer",
+        "The All-Aware",
+        "The Well-Acquainted"
+      ],
+      "target": "Al-Khabeer",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Halim",
+      "aliases": [
+        "Al-Haleem",
+        "The Forbearing",
+        "The Most Forbearing"
+      ],
+      "target": "Al-Haleem",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Azim",
+      "aliases": [
+        "Al-Adheem",
+        "Al-Azeem",
+        "The Magnificent",
+        "The Most Great"
+      ],
+      "target": "Al-Azeem",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Ghafur",
+      "aliases": [
+        "Al-Ghafoor",
+        "The Oft-Forgiving",
+        "The All-Forgiving One"
+      ],
+      "target": "Al-Ghafoor",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Ash-Shakur",
+      "aliases": [
+        "Al-Shakur",
+        "The Most Appreciative",
+        "The Rewarder of Thankfulness"
+      ],
+      "target": "Ash-Shakoor",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Ali",
+      "aliases": [
+        "Al-'Ali",
+        "The Most High",
+        "The Exalted"
+      ],
+      "target": "Al-Ali",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Kabir",
+      "aliases": [
+        "Al-Kabeer",
+        "The Most Great One",
+        "The Grand"
+      ],
+      "target": "Al-Kabeer",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Hafiz",
+      "aliases": [
+        "Al-Hafeez",
+        "The Preserver",
+        "The Protector"
+      ],
+      "target": "Al-Hafeez",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "As-Sami",
+      "aliases": [
+        "Al-Sami",
+        "As-Samee",
+        "The All-Hearing"
+      ],
+      "target": "As-Samee",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Basir",
+      "aliases": [
+        "Al-Baseer",
+        "The All-Seeing"
+      ],
+      "target": "Al-Baseer",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Hakim",
+      "aliases": [
+        "Al-Hakeem",
+        "The All-Wise",
+        "The Most Wise"
+      ],
+      "target": "Al-Hakeem",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Wadud",
+      "aliases": [
+        "Al-Wadood",
+        "The Most Loving",
+        "The Affectionate"
+      ],
+      "target": "Al-Wadood",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Hayy",
+      "aliases": [
+        "The Ever-Living",
+        "The Living"
+      ],
+      "target": "Al-Hayy",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Qayyum",
+      "aliases": [
+        "Al-Qayyoom",
+        "The Self-Subsisting",
+        "The Sustainer of all"
+      ],
+      "target": "Al-Qayyoom",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Ahad",
+      "aliases": [
+        "The One",
+        "The Unique"
+      ],
+      "target": "Al-Ahad",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "As-Samad",
+      "aliases": [
+        "Al-Samad",
+        "The Eternal Refuge",
+        "The Self-Sufficient Master"
+      ],
+      "target": "As-Samad",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Qadir",
+      "aliases": [
+        "Al-Qaadir",
+        "The All-Powerful",
+        "The Omnipotent"
+      ],
+      "target": "Al-Qadir",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Rabb",
+      "aliases": [
+        "the Lord",
+        "Lord of the worlds",
+        "Rabb al-Alamin",
+        "Rabbul Alameen"
+      ],
+      "target": "Rabb",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Wakil",
+      "aliases": [
+        "Al-Wakeel",
+        "The Trustee",
+        "The Disposer of Affairs"
+      ],
+      "target": "Al-Wakeel",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "At-Tawwab",
+      "aliases": [
+        "Al-Tawwab",
+        "The Accepter of Repentance",
+        "The Ever-Relenting"
+      ],
+      "target": "At-Tawwab",
+      "category": "names_of_allah",
+      "honorific": ""
+    },
+    {
+      "source": "Prophet Muhammad",
+      "aliases": [
+        "Muhammad",
+        "Prophet Mohammed",
+        "Mohammed",
+        "Muhammad ibn Abdullah",
+        "the Prophet Muhammad",
+        "the Final Messenger",
+        "the Seal of the Prophets"
+      ],
+      "target": "Muhammad",
+      "category": "prophet",
+      "honorific": "prophet_muhammad",
+      "gender": "m",
+      "note": "always followed by (Sallallahu Alaihi Wasallam)"
+    },
+    {
+      "source": "Adam",
+      "aliases": [
+        "Prophet Adam"
+      ],
+      "target": "Adam",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Idris",
+      "aliases": [
+        "Idrees",
+        "Enoch",
+        "Prophet Idris"
+      ],
+      "target": "Idrees",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Nuh",
+      "aliases": [
+        "Noah",
+        "Prophet Noah",
+        "Prophet Nuh",
+        "Nooh"
+      ],
+      "target": "Nuh",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Hud",
+      "aliases": [
+        "Hood",
+        "Prophet Hud"
+      ],
+      "target": "Hood",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Salih",
+      "aliases": [
+        "Saleh",
+        "Prophet Salih",
+        "Prophet Saleh"
+      ],
+      "target": "Saleh",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Ibrahim",
+      "aliases": [
+        "Abraham",
+        "Prophet Abraham",
+        "Prophet Ibrahim",
+        "Ibraheem"
+      ],
+      "target": "Ibrahim",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Lut",
+      "aliases": [
+        "Lot",
+        "Prophet Lot",
+        "Prophet Lut",
+        "Loot"
+      ],
+      "target": "Loot",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Ismail",
+      "aliases": [
+        "Ishmael",
+        "Isma'il",
+        "Prophet Ishmael",
+        "Prophet Ismail",
+        "Ismaeel"
+      ],
+      "target": "Ismail",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Ishaq",
+      "aliases": [
+        "Isaac",
+        "Prophet Isaac",
+        "Prophet Ishaq",
+        "Is'haq"
+      ],
+      "target": "Ishaq",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Yaqub",
+      "aliases": [
+        "Jacob",
+        "Ya'qub",
+        "Yaqoob",
+        "Prophet Jacob",
+        "Prophet Yaqub"
+      ],
+      "target": "Yaqoob",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Yusuf",
+      "aliases": [
+        "Joseph",
+        "Prophet Joseph",
+        "Prophet Yusuf",
+        "Yoosuf"
+      ],
+      "target": "Yusuf",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Ayyub",
+      "aliases": [
+        "Job",
+        "Prophet Job",
+        "Prophet Ayyub",
+        "Ayub",
+        "Ayyoob"
+      ],
+      "target": "Ayyub",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Shu'ayb",
+      "aliases": [
+        "Shuaib",
+        "Shuayb",
+        "Jethro",
+        "Prophet Shuaib",
+        "Prophet Shu'ayb"
+      ],
+      "target": "Shuaib",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Musa",
+      "aliases": [
+        "Moses",
+        "Prophet Moses",
+        "Prophet Musa",
+        "Moosa"
+      ],
+      "target": "Musa",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Harun",
+      "aliases": [
+        "Aaron",
+        "Haroon",
+        "Prophet Aaron",
+        "Prophet Harun"
+      ],
+      "target": "Haroon",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Dhul-Kifl",
+      "aliases": [
+        "Dhul Kifl",
+        "Zul-Kifl",
+        "Ezekiel",
+        "Prophet Dhul-Kifl"
+      ],
+      "target": "Zul-Kifl",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Dawud",
+      "aliases": [
+        "David",
+        "Dawood",
+        "Daud",
+        "Prophet David",
+        "Prophet Dawud"
+      ],
+      "target": "Dawood",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Sulayman",
+      "aliases": [
+        "Solomon",
+        "Sulaiman",
+        "Suleiman",
+        "Prophet Solomon",
+        "Prophet Sulayman"
+      ],
+      "target": "Sulaiman",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Ilyas",
+      "aliases": [
+        "Elijah",
+        "Elias",
+        "Prophet Elijah",
+        "Prophet Ilyas"
+      ],
+      "target": "Ilyas",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Al-Yasa",
+      "aliases": [
+        "Elisha",
+        "Alyasa",
+        "Prophet Elisha",
+        "Prophet Al-Yasa"
+      ],
+      "target": "Al-Yasa",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Yunus",
+      "aliases": [
+        "Jonah",
+        "Prophet Jonah",
+        "Prophet Yunus",
+        "Yoonus"
+      ],
+      "target": "Yunus",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Zakariyya",
+      "aliases": [
+        "Zechariah",
+        "Zakariya",
+        "Zakariah",
+        "Prophet Zechariah",
+        "Prophet Zakariyya"
+      ],
+      "target": "Zakariya",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Yahya",
+      "aliases": [
+        "John the Baptist",
+        "Prophet Yahya",
+        "Prophet John"
+      ],
+      "target": "Yahya",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Isa",
+      "aliases": [
+        "Jesus",
+        "Eesa",
+        "Prophet Jesus",
+        "Prophet Isa",
+        "Isa ibn Maryam",
+        "Jesus Christ"
+      ],
+      "target": "Isa",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "m"
+    },
+    {
+      "source": "Maryam",
+      "aliases": [
+        "Mary",
+        "Virgin Mary",
+        "Mary the mother of Jesus"
+      ],
+      "target": "Maryam",
+      "category": "prophet",
+      "honorific": "other_prophets",
+      "gender": "f",
+      "note": "honorific (Alaihassalam)"
+    },
+    {
+      "source": "Abu Bakr",
+      "aliases": [
+        "Abu Bakr as-Siddiq",
+        "Abu Bakr al-Siddiq",
+        "Abu Bakar",
+        "Abu Bakr Siddiq"
+      ],
+      "target": "Abu Bakr Siddeeq",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Umar ibn al-Khattab",
+      "aliases": [
+        "Umar",
+        "Umar bin al-Khattab",
+        "Omar",
+        "Umar al-Faruq",
+        "Omar ibn al-Khattab"
+      ],
+      "target": "Umar bin Khattab",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Uthman ibn Affan",
+      "aliases": [
+        "Uthman",
+        "Usman",
+        "Othman",
+        "Usman ibn Affan",
+        "Uthman bin Affan"
+      ],
+      "target": "Usman bin Affan",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Ali ibn Abi Talib",
+      "aliases": [
+        "Ali",
+        "Ali bin Abi Talib",
+        "Ali ibn Abu Talib"
+      ],
+      "target": "Ali bin Abi Talib",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Aisha",
+      "aliases": [
+        "A'ishah",
+        "Aishah",
+        "Ayesha",
+        "Aisha bint Abi Bakr"
+      ],
+      "target": "Aisha",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Khadijah",
+      "aliases": [
+        "Khadija",
+        "Khadijah bint Khuwaylid"
+      ],
+      "target": "Khadija",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Hafsah",
+      "aliases": [
+        "Hafsa",
+        "Hafsah bint Umar"
+      ],
+      "target": "Hafsa",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Umm Salamah",
+      "aliases": [
+        "Umm Salama",
+        "Umm Salamah bint Abi Umayyah"
+      ],
+      "target": "Umm Salama",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Zaynab bint Jahsh",
+      "aliases": [
+        "Zainab bint Jahsh"
+      ],
+      "target": "Zainab bint Jahsh",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Fatimah",
+      "aliases": [
+        "Fatima",
+        "Fatimah az-Zahra",
+        "Fatima bint Muhammad"
+      ],
+      "target": "Fatima",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Abu Hurairah",
+      "aliases": [
+        "Abu Huraira",
+        "Abu Hurayrah",
+        "Abu Hurayra"
+      ],
+      "target": "Abu Hurairah",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Abbas",
+      "aliases": [
+        "Abdullah ibn Abbas",
+        "Abdullah bin Abbas",
+        "Ibn 'Abbas"
+      ],
+      "target": "Ibn Abbas",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Umar",
+      "aliases": [
+        "Abdullah ibn Umar",
+        "Abdullah bin Umar",
+        "Ibn 'Umar"
+      ],
+      "target": "Ibn Umar",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Mas'ud",
+      "aliases": [
+        "Ibn Masud",
+        "Ibn Masood",
+        "Abdullah ibn Mas'ud",
+        "Abdullah bin Masood",
+        "Abdullah ibn Masud"
+      ],
+      "target": "Ibn Masood",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Anas ibn Malik",
+      "aliases": [
+        "Anas",
+        "Anas bin Malik"
+      ],
+      "target": "Anas bin Malik",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Jabir ibn Abdullah",
+      "aliases": [
+        "Jabir",
+        "Jabir bin Abdullah"
+      ],
+      "target": "Jabir bin Abdullah",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Abu Sa'id al-Khudri",
+      "aliases": [
+        "Abu Said al-Khudri",
+        "Abu Saeed al-Khudri",
+        "Abu Sa'eed al-Khudree"
+      ],
+      "target": "Abu Saeed Khudri",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Mu'adh ibn Jabal",
+      "aliases": [
+        "Muadh ibn Jabal",
+        "Muaz bin Jabal",
+        "Mu'adh bin Jabal"
+      ],
+      "target": "Muaz bin Jabal",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Bilal",
+      "aliases": [
+        "Bilal ibn Rabah",
+        "Bilal bin Rabah"
+      ],
+      "target": "Bilal",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Talhah",
+      "aliases": [
+        "Talha",
+        "Talhah ibn Ubaydullah",
+        "Talha bin Ubaidullah"
+      ],
+      "target": "Talha",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Az-Zubayr",
+      "aliases": [
+        "Zubair",
+        "Zubayr ibn al-Awwam",
+        "Az-Zubair",
+        "Zubair bin al-Awwam"
+      ],
+      "target": "Zubair",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Sa'd ibn Abi Waqqas",
+      "aliases": [
+        "Sad ibn Abi Waqqas",
+        "Saad bin Abi Waqqas",
+        "Sa'd bin Abi Waqqas"
+      ],
+      "target": "Saad bin Abi Waqqas",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Sa'id ibn Zayd",
+      "aliases": [
+        "Said ibn Zayd",
+        "Saeed bin Zaid"
+      ],
+      "target": "Saeed bin Zaid",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Abdur Rahman ibn Awf",
+      "aliases": [
+        "Abdur-Rahman ibn Awf",
+        "Abdul Rahman ibn Awf",
+        "Abdur Rahman bin Awf"
+      ],
+      "target": "Abdur Rahman bin Auf",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Abu Ubaydah",
+      "aliases": [
+        "Abu Ubaidah",
+        "Abu Ubaydah ibn al-Jarrah",
+        "Abu Ubaidah bin al-Jarrah"
+      ],
+      "target": "Abu Ubaidah",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Hamzah",
+      "aliases": [
+        "Hamza",
+        "Hamzah ibn Abdul-Muttalib",
+        "Hamza bin Abdul Muttalib"
+      ],
+      "target": "Hamza",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Al-Abbas ibn Abdul-Muttalib",
+      "aliases": [
+        "Abbas ibn Abdul-Muttalib",
+        "Abbas bin Abdul Muttalib",
+        "Al-Abbas"
+      ],
+      "target": "Abbas bin Abdul Muttalib",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Zayd ibn Harithah",
+      "aliases": [
+        "Zaid ibn Harithah",
+        "Zaid bin Haritha",
+        "Zayd bin Haritha"
+      ],
+      "target": "Zaid bin Haris",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Usamah ibn Zayd",
+      "aliases": [
+        "Usama ibn Zaid",
+        "Usama bin Zaid",
+        "Usamah bin Zaid"
+      ],
+      "target": "Usama bin Zaid",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Salman al-Farisi",
+      "aliases": [
+        "Salman the Persian",
+        "Salman Farsi",
+        "Salman al-Farsi"
+      ],
+      "target": "Salman Farsi",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Abu Dharr",
+      "aliases": [
+        "Abu Dhar",
+        "Abu Zar",
+        "Abu Dharr al-Ghifari",
+        "Abu Zarr"
+      ],
+      "target": "Abu Zar Ghifari",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Ammar ibn Yasir",
+      "aliases": [
+        "Ammar bin Yasir",
+        "Ammar"
+      ],
+      "target": "Ammar bin Yasir",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Khalid ibn al-Walid",
+      "aliases": [
+        "Khalid bin Walid",
+        "Khalid ibn Walid",
+        "Khalid bin al-Walid"
+      ],
+      "target": "Khalid bin Waleed",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Amr ibn al-As",
+      "aliases": [
+        "Amr bin al-As",
+        "Amr ibn al-Aas"
+      ],
+      "target": "Amr bin al-Aas",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Mu'awiyah",
+      "aliases": [
+        "Muawiyah",
+        "Muawiya",
+        "Mu'awiyah ibn Abi Sufyan",
+        "Muawiya bin Abu Sufyan"
+      ],
+      "target": "Muawiya",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Abu Musa al-Ash'ari",
+      "aliases": [
+        "Abu Musa al-Ashari",
+        "Abu Moosa al-Ash'ari"
+      ],
+      "target": "Abu Musa Ash'ari",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Ubayy ibn Ka'b",
+      "aliases": [
+        "Ubayy ibn Kab",
+        "Ubai bin Kaab",
+        "Ubayy bin Ka'b"
+      ],
+      "target": "Ubayy bin Ka'b",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Zayd ibn Thabit",
+      "aliases": [
+        "Zaid ibn Thabit",
+        "Zaid bin Thabit"
+      ],
+      "target": "Zaid bin Sabit",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "m"
+    },
+    {
+      "source": "Asma bint Abi Bakr",
+      "aliases": [
+        "Asma' bint Abi Bakr",
+        "Asmaa bint Abi Bakr"
+      ],
+      "target": "Asma bint Abi Bakr",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Umm Ayman",
+      "aliases": [
+        "Umm Aiman"
+      ],
+      "target": "Umm Aiman",
+      "category": "companion",
+      "honorific": "companion",
+      "gender": "f"
+    },
+    {
+      "source": "Sahabah",
+      "aliases": [
+        "Sahaba",
+        "the Companions",
+        "Companions of the Prophet",
+        "the Companions of the Prophet",
+        "Sahaabah"
+      ],
+      "target": "Sahaba",
+      "category": "companion",
+      "honorific": "",
+      "note": "Sahaba-e-Kiraam (Radiallahu Anhum) in honorific context"
+    },
+    {
+      "source": "Ummahat al-Mu'minin",
+      "aliases": [
+        "Ummahatul Mumineen",
+        "Mothers of the Believers",
+        "the Mothers of the Believers"
+      ],
+      "target": "Ummahat-ul-Momineen",
+      "category": "companion",
+      "honorific": "",
+      "note": "collective; (Radiallahu Anhunna)"
+    },
+    {
+      "source": "Imam Abu Hanifah",
+      "aliases": [
+        "Abu Hanifa",
+        "Abu Hanifah",
+        "Imam Abu Hanifa"
+      ],
+      "target": "Imam Abu Hanifa",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam Malik",
+      "aliases": [
+        "Malik ibn Anas",
+        "Malik bin Anas",
+        "Imam Malik ibn Anas"
+      ],
+      "target": "Imam Malik",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam ash-Shafi'i",
+      "aliases": [
+        "Imam Shafi'i",
+        "Imam Shafii",
+        "Ash-Shafi'i",
+        "Al-Shafi'i",
+        "Imam al-Shafi'i",
+        "Imam Shafi"
+      ],
+      "target": "Imam Shafi'i",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam Ahmad ibn Hanbal",
+      "aliases": [
+        "Ahmad ibn Hanbal",
+        "Ahmad bin Hanbal",
+        "Imam Ahmad",
+        "Ibn Hanbal"
+      ],
+      "target": "Imam Ahmad bin Hanbal",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam al-Bukhari",
+      "aliases": [
+        "Imam Bukhari",
+        "Al-Bukhari",
+        "Muhammad ibn Ismail al-Bukhari"
+      ],
+      "target": "Imam Bukhari",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam Muslim",
+      "aliases": [
+        "Muslim ibn al-Hajjaj",
+        "Imam Muslim ibn al-Hajjaj"
+      ],
+      "target": "Imam Muslim",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam at-Tirmidhi",
+      "aliases": [
+        "At-Tirmidhi",
+        "Al-Tirmidhi",
+        "Imam Tirmidhi",
+        "Tirmidhi",
+        "Imam Tirmizi"
+      ],
+      "target": "Imam Tirmizi",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam Abu Dawud",
+      "aliases": [
+        "Abu Dawud",
+        "Abu Dawood",
+        "Abu Da'ud",
+        "Imam Abu Dawood"
+      ],
+      "target": "Imam Abu Dawood",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam an-Nasa'i",
+      "aliases": [
+        "An-Nasa'i",
+        "Al-Nasa'i",
+        "Nasai",
+        "Imam Nasai",
+        "An-Nasai"
+      ],
+      "target": "Imam Nasai",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam Ibn Majah",
+      "aliases": [
+        "Ibn Majah",
+        "Ibn Maajah"
+      ],
+      "target": "Imam Ibn Majah",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Taymiyyah",
+      "aliases": [
+        "Ibn Taymiyya",
+        "Ibn Taimiyah",
+        "Ibn Taymiyah",
+        "Shaykh al-Islam Ibn Taymiyyah",
+        "Ibn Taimiyyah",
+        "Ibn Taymiah"
+      ],
+      "target": "Ibn Taimiyyah",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn al-Qayyim",
+      "aliases": [
+        "Ibn Qayyim",
+        "Ibn Qayyim al-Jawziyyah",
+        "Ibn al-Qayyim al-Jawziyya",
+        "Ibn Qayyim al-Jawziyya"
+      ],
+      "target": "Ibn Qayyim",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Kathir",
+      "aliases": [
+        "Ibn Katheer",
+        "Ibn Kaseer",
+        "Imam Ibn Kathir",
+        "Isma'il ibn Kathir"
+      ],
+      "target": "Ibn Kaseer",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Imam an-Nawawi",
+      "aliases": [
+        "An-Nawawi",
+        "Al-Nawawi",
+        "Nawawi",
+        "Imam Nawawi"
+      ],
+      "target": "Imam Nawawi",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Hajar",
+      "aliases": [
+        "Ibn Hajar al-Asqalani",
+        "Ibn Hajar al-'Asqalani",
+        "Hafiz Ibn Hajar"
+      ],
+      "target": "Ibn Hajar Asqalani",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Muhammad ibn Abdul Wahhab",
+      "aliases": [
+        "Muhammad ibn Abd al-Wahhab",
+        "Ibn Abdul Wahhab",
+        "Muhammad bin Abdul Wahhab",
+        "Shaykh Muhammad ibn Abdul Wahhab"
+      ],
+      "target": "Muhammad bin Abdul Wahhab",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Baz",
+      "aliases": [
+        "Shaykh Ibn Baz",
+        "Abdul Aziz ibn Baz",
+        "Ibn Baaz",
+        "Bin Baz",
+        "Abdul Aziz bin Baz"
+      ],
+      "target": "Shaikh Ibn Baz",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Uthaymin",
+      "aliases": [
+        "Ibn Uthaymeen",
+        "Ibn Uthaimeen",
+        "Shaykh Ibn Uthaymeen",
+        "Muhammad ibn Salih al-Uthaymin",
+        "Al-Uthaymeen",
+        "Ibn Usaimeen"
+      ],
+      "target": "Shaikh Ibn Usaimeen",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Al-Albani",
+      "aliases": [
+        "Shaykh al-Albani",
+        "Al-Albaani",
+        "Nasir ad-Din al-Albani",
+        "Albani",
+        "Nasiruddin Albani"
+      ],
+      "target": "Shaikh Albani",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "At-Tabari",
+      "aliases": [
+        "Al-Tabari",
+        "Ibn Jarir at-Tabari",
+        "Imam Tabari",
+        "Tabari"
+      ],
+      "target": "Imam Tabari",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Al-Qurtubi",
+      "aliases": [
+        "Imam Qurtubi",
+        "Qurtubi",
+        "Imam al-Qurtubi"
+      ],
+      "target": "Imam Qurtubi",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Rajab",
+      "aliases": [
+        "Ibn Rajab al-Hanbali",
+        "Hafiz Ibn Rajab"
+      ],
+      "target": "Ibn Rajab Hanbali",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Adh-Dhahabi",
+      "aliases": [
+        "Al-Dhahabi",
+        "Dhahabi",
+        "Imam Dhahabi",
+        "Imam adh-Dhahabi"
+      ],
+      "target": "Imam Zahabi",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Al-Hasan al-Basri",
+      "aliases": [
+        "Hasan al-Basri",
+        "Hasan Basri",
+        "Al-Hasan al-Basree"
+      ],
+      "target": "Hasan Basri",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Sufyan ath-Thawri",
+      "aliases": [
+        "Sufyan al-Thawri",
+        "Sufyan Thawri",
+        "Sufyaan ath-Thawree"
+      ],
+      "target": "Sufyan Sauri",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Abdullah ibn al-Mubarak",
+      "aliases": [
+        "Ibn al-Mubarak",
+        "Abdullah bin al-Mubarak",
+        "Ibn Mubarak"
+      ],
+      "target": "Abdullah bin Mubarak",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Hazm",
+      "aliases": [
+        "Ibn Hazm al-Andalusi"
+      ],
+      "target": "Ibn Hazm",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Al-Bayhaqi",
+      "aliases": [
+        "Bayhaqi",
+        "Imam al-Bayhaqi",
+        "Al-Baihaqi",
+        "Baihaqi"
+      ],
+      "target": "Imam Baihaqi",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Abdul Barr",
+      "aliases": [
+        "Ibn Abd al-Barr",
+        "Ibn 'Abd al-Barr"
+      ],
+      "target": "Ibn Abdul Barr",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ash-Shawkani",
+      "aliases": [
+        "Al-Shawkani",
+        "Shawkani",
+        "Imam Shawkani"
+      ],
+      "target": "Imam Shaukani",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Umar ibn Abdul Aziz",
+      "aliases": [
+        "Umar ibn Abd al-Aziz",
+        "Umar bin Abdul Aziz",
+        "Omar ibn Abdul Aziz"
+      ],
+      "target": "Umar bin Abdul Aziz",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Jibrin",
+      "aliases": [
+        "Ibn Jibreen",
+        "Abdullah ibn Jibrin",
+        "Shaykh Ibn Jibreen",
+        "Abdullah bin Jibreen"
+      ],
+      "target": "Shaikh Ibn Jibreen",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Salih al-Fawzan",
+      "aliases": [
+        "Saleh al-Fawzan",
+        "Shaykh al-Fawzan",
+        "Al-Fawzan",
+        "Saleh Al-Fauzan"
+      ],
+      "target": "Shaikh Saleh Al-Fauzan",
+      "category": "scholar",
+      "honorific": "scholar_living",
+      "gender": "m"
+    },
+    {
+      "source": "Abdul Muhsin al-Abbad",
+      "aliases": [
+        "Abdul-Muhsin al-Abbad",
+        "Shaykh Abdul Muhsin al-Abbad",
+        "Al-Abbad"
+      ],
+      "target": "Shaikh Abdul Muhsin Al-Abbad",
+      "category": "scholar",
+      "honorific": "scholar_living",
+      "gender": "m"
+    },
+    {
+      "source": "Al-Ghazali",
+      "aliases": [
+        "Imam Ghazali",
+        "Ghazali",
+        "Abu Hamid al-Ghazali",
+        "Al-Ghazzali"
+      ],
+      "target": "Imam Ghazali",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Ibn Qudamah",
+      "aliases": [
+        "Ibn Qudama",
+        "Ibn Qudamah al-Maqdisi"
+      ],
+      "target": "Ibn Qudama",
+      "category": "scholar",
+      "honorific": "scholar_deceased",
+      "gender": "m"
+    },
+    {
+      "source": "Sahih al-Bukhari",
+      "aliases": [
+        "Sahih Bukhari",
+        "Saheeh al-Bukhari",
+        "Saheeh Bukhari",
+        "Bukhari",
+        "Sahih al-Bukhaari"
+      ],
+      "target": "Sahih Bukhari",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sahih Muslim",
+      "aliases": [
+        "Saheeh Muslim",
+        "Sahih al-Muslim"
+      ],
+      "target": "Sahih Muslim",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sunan Abi Dawud",
+      "aliases": [
+        "Sunan Abu Dawud",
+        "Sunan Abu Dawood",
+        "Sunan Abi Dawood",
+        "Abu Dawud's Sunan"
+      ],
+      "target": "Sunan Abu Dawood",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Jami' at-Tirmidhi",
+      "aliases": [
+        "Jami at-Tirmidhi",
+        "Sunan at-Tirmidhi",
+        "Sunan al-Tirmidhi",
+        "Sunan Tirmidhi",
+        "Jami al-Tirmidhi",
+        "Tirmidhi's Jami"
+      ],
+      "target": "Sunan Tirmizi",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sunan an-Nasa'i",
+      "aliases": [
+        "Sunan al-Nasa'i",
+        "Sunan Nasai",
+        "Sunan an-Nasai",
+        "Sunan al-Nasai"
+      ],
+      "target": "Sunan Nasai",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sunan Ibn Majah",
+      "aliases": [
+        "Sunan Ibn Maajah",
+        "Ibn Majah's Sunan"
+      ],
+      "target": "Sunan Ibn Majah",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Muwatta Malik",
+      "aliases": [
+        "Al-Muwatta",
+        "Muwatta Imam Malik",
+        "The Muwatta",
+        "Muwatta'"
+      ],
+      "target": "Muwatta Imam Malik",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Musnad Ahmad",
+      "aliases": [
+        "Musnad Imam Ahmad",
+        "Musnad Ahmad ibn Hanbal",
+        "Al-Musnad",
+        "Musnad of Imam Ahmad"
+      ],
+      "target": "Musnad Ahmad",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Riyad as-Salihin",
+      "aliases": [
+        "Riyadh as-Saliheen",
+        "Riyad al-Salihin",
+        "Riyadus Saliheen",
+        "Riyaz us Saliheen",
+        "Gardens of the Righteous"
+      ],
+      "target": "Riyaz-us-Saliheen",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Tafsir Ibn Kathir",
+      "aliases": [
+        "Tafseer Ibn Kathir",
+        "Tafseer Ibn Katheer",
+        "Tafsir Ibn Katheer",
+        "Tafseer Ibn Kaseer"
+      ],
+      "target": "Tafseer Ibn Kaseer",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Kitab at-Tawhid",
+      "aliases": [
+        "Kitab al-Tawhid",
+        "Kitaab at-Tawheed",
+        "Kitab ut-Tawheed",
+        "The Book of Monotheism",
+        "Book of Tawhid",
+        "Kitab-ut-Tauheed"
+      ],
+      "target": "Kitab-ut-Tauheed",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Aqidah al-Wasitiyyah",
+      "aliases": [
+        "Aqidah Wasitiyyah",
+        "Al-Aqeedah al-Waasitiyyah",
+        "Aqeedah al-Wasitiyyah",
+        "The Wasitiyyah Creed"
+      ],
+      "target": "Aqeedah Wasitiyyah",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Fath al-Bari",
+      "aliases": [
+        "Fathul Bari",
+        "Fath ul-Bari",
+        "Fath al-Baari"
+      ],
+      "target": "Fath-ul-Bari",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sharh Sahih Muslim",
+      "aliases": [
+        "Nawawi's Sharh Sahih Muslim",
+        "Sharh Muslim",
+        "Al-Minhaj Sharh Sahih Muslim"
+      ],
+      "target": "Sharh Sahih Muslim",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Bulugh al-Maram",
+      "aliases": [
+        "Bulughul Maram",
+        "Buloogh al-Maraam",
+        "Bulugh ul-Maram"
+      ],
+      "target": "Bulugh-ul-Maram",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Zad al-Ma'ad",
+      "aliases": [
+        "Zaad al-Ma'ad",
+        "Zad al-Maad",
+        "Zaad ul-Ma'aad"
+      ],
+      "target": "Zaad-ul-Ma'aad",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Usul ath-Thalathah",
+      "aliases": [
+        "Thalathat al-Usul",
+        "The Three Fundamental Principles",
+        "Usool ath-Thalaathah",
+        "Usool-us-Thalatha",
+        "The Three Principles"
+      ],
+      "target": "Usool-e-Salasa",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Kashf ash-Shubuhat",
+      "aliases": [
+        "Kashf al-Shubuhat",
+        "Kashf ush-Shubuhaat",
+        "Removal of the Doubts",
+        "Removal of Doubts"
+      ],
+      "target": "Kashf-ush-Shubuhat",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Qawa'id al-Arba'",
+      "aliases": [
+        "Al-Qawaid al-Arba",
+        "The Four Principles",
+        "Qawaid al-Arba'ah",
+        "The Four Rules"
+      ],
+      "target": "Qawaid-ul-Arba",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Tafsir at-Tabari",
+      "aliases": [
+        "Tafsir al-Tabari",
+        "Jami al-Bayan",
+        "Tafseer at-Tabari"
+      ],
+      "target": "Tafseer Tabari",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Tafsir al-Qurtubi",
+      "aliases": [
+        "Tafseer al-Qurtubi",
+        "Al-Jami li Ahkam al-Quran",
+        "Tafsir Qurtubi"
+      ],
+      "target": "Tafseer Qurtubi",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sahih at-Targhib",
+      "aliases": [
+        "Saheeh at-Targheeb",
+        "Sahih al-Targhib wa al-Tarhib",
+        "Sahih at-Targhib wat-Tarhib"
+      ],
+      "target": "Sahih at-Targheeb",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "As-Silsilah as-Sahihah",
+      "aliases": [
+        "Silsilah as-Sahihah",
+        "Silsilat al-Ahadith al-Sahihah",
+        "As-Saheehah",
+        "Silsilah Saheehah"
+      ],
+      "target": "Silsila Sahiha",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Mustadrak al-Hakim",
+      "aliases": [
+        "Al-Mustadrak",
+        "Mustadrak al-Haakim",
+        "Al-Mustadrak ala as-Sahihayn"
+      ],
+      "target": "Mustadrak Hakim",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sunan ad-Darimi",
+      "aliases": [
+        "Sunan al-Darimi",
+        "Sunan Darimi",
+        "Musnad ad-Darimi"
+      ],
+      "target": "Sunan Darimi",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sahih Ibn Hibban",
+      "aliases": [
+        "Saheeh Ibn Hibbaan",
+        "Ibn Hibban's Sahih"
+      ],
+      "target": "Sahih Ibn Hibban",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Adab al-Mufrad",
+      "aliases": [
+        "Adab al-Mufrad",
+        "Al-Adab ul-Mufrad"
+      ],
+      "target": "Al-Adab-ul-Mufrad",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sunan al-Kubra",
+      "aliases": [
+        "As-Sunan al-Kubra",
+        "Al-Sunan al-Kubra"
+      ],
+      "target": "Sunan Kubra",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Sahih al-Jami",
+      "aliases": [
+        "Saheeh al-Jaami",
+        "Sahih al-Jami as-Saghir",
+        "Saheeh al-Jaami' as-Sagheer"
+      ],
+      "target": "Sahih-ul-Jami",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Majmu al-Fatawa",
+      "aliases": [
+        "Majmoo al-Fataawa",
+        "Majmu' al-Fatawa",
+        "Majmu Fatawa"
+      ],
+      "target": "Majmu-ul-Fatawa",
+      "category": "book",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Fatihah",
+      "aliases": [
+        "Al-Fatiha",
+        "Al-Faatihah",
+        "The Opening",
+        "Surah Al-Fatihah",
+        "Surat Al-Fatihah",
+        "Soorah Al-Fatihah"
+      ],
+      "target": "Surah Al-Fatiha",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 1"
+    },
+    {
+      "source": "Al-Baqarah",
+      "aliases": [
+        "Al-Baqara",
+        "The Cow",
+        "Surah Al-Baqarah",
+        "Surat Al-Baqarah",
+        "Soorah Al-Baqarah"
+      ],
+      "target": "Surah Al-Baqarah",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 2"
+    },
+    {
+      "source": "Aal Imran",
+      "aliases": [
+        "Al Imran",
+        "Al-Imran",
+        "Ali Imran",
+        "Aal-e-Imran",
+        "The Family of Imran",
+        "Surah Aal Imran",
+        "Surat Aal Imran",
+        "Soorah Aal Imran"
+      ],
+      "target": "Surah Aal-e-Imran",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 3"
+    },
+    {
+      "source": "An-Nisa",
+      "aliases": [
+        "Al-Nisa",
+        "An-Nisaa",
+        "The Women",
+        "Surah An-Nisa",
+        "Surat An-Nisa",
+        "Soorah An-Nisa"
+      ],
+      "target": "Surah An-Nisa",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 4"
+    },
+    {
+      "source": "Al-Ma'idah",
+      "aliases": [
+        "Al-Maidah",
+        "Al-Maida",
+        "Al-Ma'ida",
+        "The Table Spread",
+        "Surah Al-Ma'idah",
+        "Surat Al-Ma'idah",
+        "Soorah Al-Ma'idah"
+      ],
+      "target": "Surah Al-Maidah",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 5"
+    },
+    {
+      "source": "Al-An'am",
+      "aliases": [
+        "Al-Anam",
+        "Al-An'aam",
+        "The Cattle",
+        "Surah Al-An'am",
+        "Surat Al-An'am",
+        "Soorah Al-An'am"
+      ],
+      "target": "Surah Al-An'am",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 6"
+    },
+    {
+      "source": "Al-A'raf",
+      "aliases": [
+        "Al-Araf",
+        "Al-A'raaf",
+        "The Heights",
+        "Surah Al-A'raf",
+        "Surat Al-A'raf",
+        "Soorah Al-A'raf"
+      ],
+      "target": "Surah Al-A'raf",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 7"
+    },
+    {
+      "source": "Al-Anfal",
+      "aliases": [
+        "Al-Anfaal",
+        "The Spoils of War",
+        "Surah Al-Anfal",
+        "Surat Al-Anfal",
+        "Soorah Al-Anfal"
+      ],
+      "target": "Surah Al-Anfal",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 8"
+    },
+    {
+      "source": "At-Tawbah",
+      "aliases": [
+        "Al-Tawbah",
+        "At-Tawba",
+        "At-Taubah",
+        "Bara'ah",
+        "The Repentance",
+        "Surah At-Tawbah",
+        "Surat At-Tawbah",
+        "Soorah At-Tawbah"
+      ],
+      "target": "Surah At-Tauba",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 9"
+    },
+    {
+      "source": "Surah Yunus",
+      "aliases": [
+        "Surat Yunus",
+        "Soorah Yunus",
+        "Surah Yoonus"
+      ],
+      "target": "Surah Yunus",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 10"
+    },
+    {
+      "source": "Surah Hud",
+      "aliases": [
+        "Surat Hud",
+        "Soorah Hud",
+        "Surah Hood"
+      ],
+      "target": "Surah Hood",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 11"
+    },
+    {
+      "source": "Surah Yusuf",
+      "aliases": [
+        "Surat Yusuf",
+        "Soorah Yusuf",
+        "Surah Yoosuf"
+      ],
+      "target": "Surah Yusuf",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 12"
+    },
+    {
+      "source": "Ar-Ra'd",
+      "aliases": [
+        "Al-Ra'd",
+        "Ar-Rad",
+        "The Thunder",
+        "Surah Ar-Ra'd",
+        "Surat Ar-Ra'd",
+        "Soorah Ar-Ra'd"
+      ],
+      "target": "Surah Ar-Ra'd",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 13"
+    },
+    {
+      "source": "Surah Ibrahim",
+      "aliases": [
+        "Surat Ibrahim",
+        "Soorah Ibrahim",
+        "Surah Ibraheem"
+      ],
+      "target": "Surah Ibrahim",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 14"
+    },
+    {
+      "source": "Al-Hijr",
+      "aliases": [
+        "The Rocky Tract",
+        "The Stoneland",
+        "Surah Al-Hijr",
+        "Surat Al-Hijr",
+        "Soorah Al-Hijr"
+      ],
+      "target": "Surah Al-Hijr",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 15"
+    },
+    {
+      "source": "An-Nahl",
+      "aliases": [
+        "Al-Nahl",
+        "The Bee",
+        "Surah An-Nahl",
+        "Surat An-Nahl",
+        "Soorah An-Nahl"
+      ],
+      "target": "Surah An-Nahl",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 16"
+    },
+    {
+      "source": "Al-Isra",
+      "aliases": [
+        "Al-Israa",
+        "Bani Israil",
+        "Bani Isra'il",
+        "The Night Journey",
+        "Surah Al-Isra",
+        "Surat Al-Isra",
+        "Soorah Al-Isra"
+      ],
+      "target": "Surah Al-Isra",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 17"
+    },
+    {
+      "source": "Al-Kahf",
+      "aliases": [
+        "The Cave",
+        "Surah Al-Kahf",
+        "Surat Al-Kahf",
+        "Soorah Al-Kahf"
+      ],
+      "target": "Surah Al-Kahf",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 18"
+    },
+    {
+      "source": "Surah Maryam",
+      "aliases": [
+        "Surat Maryam",
+        "Soorah Maryam",
+        "Surah Mary"
+      ],
+      "target": "Surah Maryam",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 19"
+    },
+    {
+      "source": "Ta-Ha",
+      "aliases": [
+        "Taha",
+        "Ta Ha",
+        "Surah Taha",
+        "Surah Ta-Ha",
+        "Surat Ta-Ha",
+        "Soorah Ta-Ha"
+      ],
+      "target": "Surah Taha",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 20"
+    },
+    {
+      "source": "Al-Anbiya",
+      "aliases": [
+        "Al-Anbiyaa",
+        "Al-Anbiya'",
+        "The Prophets",
+        "Surah Al-Anbiya",
+        "Surat Al-Anbiya",
+        "Soorah Al-Anbiya"
+      ],
+      "target": "Surah Al-Anbiya",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 21"
+    },
+    {
+      "source": "Al-Hajj",
+      "aliases": [
+        "Surah Hajj",
+        "Surah Al-Hajj",
+        "Surat Al-Hajj",
+        "Soorah Al-Hajj"
+      ],
+      "target": "Surah Al-Hajj",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 22"
+    },
+    {
+      "source": "Al-Mu'minun",
+      "aliases": [
+        "Al-Muminun",
+        "Al-Mu'minoon",
+        "The Believers",
+        "Surah Al-Mu'minun",
+        "Surat Al-Mu'minun",
+        "Soorah Al-Mu'minun"
+      ],
+      "target": "Surah Al-Mu'minoon",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 23"
+    },
+    {
+      "source": "An-Nur",
+      "aliases": [
+        "Al-Nur",
+        "An-Noor",
+        "The Light",
+        "Surah An-Nur",
+        "Surat An-Nur",
+        "Soorah An-Nur"
+      ],
+      "target": "Surah An-Noor",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 24"
+    },
+    {
+      "source": "Al-Furqan",
+      "aliases": [
+        "Al-Furqaan",
+        "The Criterion",
+        "Surah Al-Furqan",
+        "Surat Al-Furqan",
+        "Soorah Al-Furqan"
+      ],
+      "target": "Surah Al-Furqan",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 25"
+    },
+    {
+      "source": "Ash-Shu'ara",
+      "aliases": [
+        "Al-Shu'ara",
+        "Ash-Shuara",
+        "The Poets",
+        "Surah Ash-Shu'ara",
+        "Surat Ash-Shu'ara",
+        "Soorah Ash-Shu'ara"
+      ],
+      "target": "Surah Ash-Shu'ara",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 26"
+    },
+    {
+      "source": "An-Naml",
+      "aliases": [
+        "Al-Naml",
+        "The Ant",
+        "The Ants",
+        "Surah An-Naml",
+        "Surat An-Naml",
+        "Soorah An-Naml"
+      ],
+      "target": "Surah An-Naml",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 27"
+    },
+    {
+      "source": "Al-Qasas",
+      "aliases": [
+        "The Stories",
+        "The Narrations",
+        "Surah Al-Qasas",
+        "Surat Al-Qasas",
+        "Soorah Al-Qasas"
+      ],
+      "target": "Surah Al-Qasas",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 28"
+    },
+    {
+      "source": "Al-Ankabut",
+      "aliases": [
+        "Al-'Ankabut",
+        "Al-Ankaboot",
+        "The Spider",
+        "Surah Al-Ankabut",
+        "Surat Al-Ankabut",
+        "Soorah Al-Ankabut"
+      ],
+      "target": "Surah Al-Ankaboot",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 29"
+    },
+    {
+      "source": "Ar-Rum",
+      "aliases": [
+        "Al-Rum",
+        "Ar-Room",
+        "The Romans",
+        "Surah Ar-Rum",
+        "Surat Ar-Rum",
+        "Soorah Ar-Rum"
+      ],
+      "target": "Surah Ar-Room",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 30"
+    },
+    {
+      "source": "Surah Luqman",
+      "aliases": [
+        "Luqman",
+        "Surat Luqman",
+        "Soorah Luqman"
+      ],
+      "target": "Surah Luqman",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 31"
+    },
+    {
+      "source": "As-Sajdah",
+      "aliases": [
+        "Al-Sajdah",
+        "As-Sajda",
+        "The Prostration",
+        "Surah As-Sajdah",
+        "Surat As-Sajdah",
+        "Soorah As-Sajdah"
+      ],
+      "target": "Surah As-Sajda",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 32"
+    },
+    {
+      "source": "Al-Ahzab",
+      "aliases": [
+        "Al-Ahzaab",
+        "The Confederates",
+        "The Combined Forces",
+        "Surah Al-Ahzab",
+        "Surat Al-Ahzab",
+        "Soorah Al-Ahzab"
+      ],
+      "target": "Surah Al-Ahzab",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 33"
+    },
+    {
+      "source": "Saba",
+      "aliases": [
+        "Surah Saba",
+        "Sheba",
+        "Surat Saba",
+        "Soorah Saba"
+      ],
+      "target": "Surah Saba",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 34"
+    },
+    {
+      "source": "Fatir",
+      "aliases": [
+        "Faatir",
+        "Surah Fatir",
+        "The Creator of the Heavens",
+        "Surat Fatir",
+        "Soorah Fatir"
+      ],
+      "target": "Surah Fatir",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 35"
+    },
+    {
+      "source": "Ya-Sin",
+      "aliases": [
+        "Yasin",
+        "Yaseen",
+        "Ya Sin",
+        "Surah Yaseen",
+        "Surah Yasin",
+        "Surah Ya-Sin",
+        "Surat Ya-Sin",
+        "Soorah Ya-Sin"
+      ],
+      "target": "Surah Yaseen",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 36"
+    },
+    {
+      "source": "As-Saffat",
+      "aliases": [
+        "Al-Saffat",
+        "As-Saaffaat",
+        "Those Who Set the Ranks",
+        "Surah As-Saffat",
+        "Surat As-Saffat",
+        "Soorah As-Saffat"
+      ],
+      "target": "Surah As-Saffat",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 37"
+    },
+    {
+      "source": "Sad",
+      "aliases": [
+        "Surah Sad",
+        "Surah Saad",
+        "Soorah Saad",
+        "Surat Sad",
+        "Soorah Sad"
+      ],
+      "target": "Surah Saad",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 38"
+    },
+    {
+      "source": "Az-Zumar",
+      "aliases": [
+        "Al-Zumar",
+        "The Groups",
+        "The Troops",
+        "Surah Az-Zumar",
+        "Surat Az-Zumar",
+        "Soorah Az-Zumar"
+      ],
+      "target": "Surah Az-Zumar",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 39"
+    },
+    {
+      "source": "Ghafir",
+      "aliases": [
+        "Surah Ghafir",
+        "Al-Ghafir",
+        "The Forgiver",
+        "Surat Ghafir",
+        "Soorah Ghafir"
+      ],
+      "target": "Surah Ghafir",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 40"
+    },
+    {
+      "source": "Fussilat",
+      "aliases": [
+        "Ha-Mim Sajdah",
+        "Ha Mim Sajdah",
+        "Surah Fussilat",
+        "Explained in Detail",
+        "Surat Fussilat",
+        "Soorah Fussilat"
+      ],
+      "target": "Surah Fussilat",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 41"
+    },
+    {
+      "source": "Ash-Shura",
+      "aliases": [
+        "Al-Shura",
+        "Ash-Shoora",
+        "The Consultation",
+        "Surah Ash-Shura",
+        "Surat Ash-Shura",
+        "Soorah Ash-Shura"
+      ],
+      "target": "Surah Ash-Shura",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 42"
+    },
+    {
+      "source": "Az-Zukhruf",
+      "aliases": [
+        "Al-Zukhruf",
+        "The Ornaments of Gold",
+        "The Gold Adornments",
+        "Surah Az-Zukhruf",
+        "Surat Az-Zukhruf",
+        "Soorah Az-Zukhruf"
+      ],
+      "target": "Surah Az-Zukhruf",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 43"
+    },
+    {
+      "source": "Ad-Dukhan",
+      "aliases": [
+        "Al-Dukhan",
+        "Ad-Dukhaan",
+        "The Smoke",
+        "Surah Ad-Dukhan",
+        "Surat Ad-Dukhan",
+        "Soorah Ad-Dukhan"
+      ],
+      "target": "Surah Ad-Dukhan",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 44"
+    },
+    {
+      "source": "Al-Jathiyah",
+      "aliases": [
+        "Al-Jathiya",
+        "Al-Jaathiyah",
+        "Al-Jasiyah",
+        "The Crouching",
+        "The Kneeling",
+        "Surah Al-Jathiyah",
+        "Surat Al-Jathiyah",
+        "Soorah Al-Jathiyah"
+      ],
+      "target": "Surah Al-Jasiya",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 45"
+    },
+    {
+      "source": "Al-Ahqaf",
+      "aliases": [
+        "Al-Ahqaaf",
+        "The Wind-Curved Sandhills",
+        "The Sand Dunes",
+        "Surah Al-Ahqaf",
+        "Surat Al-Ahqaf",
+        "Soorah Al-Ahqaf"
+      ],
+      "target": "Surah Al-Ahqaf",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 46"
+    },
+    {
+      "source": "Surah Muhammad",
+      "aliases": [
+        "Surat Muhammad",
+        "Soorah Muhammad"
+      ],
+      "target": "Surah Muhammad",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 47"
+    },
+    {
+      "source": "Al-Fath",
+      "aliases": [
+        "Al-Fat'h",
+        "The Victory",
+        "The Conquest",
+        "Surah Al-Fath",
+        "Surat Al-Fath",
+        "Soorah Al-Fath"
+      ],
+      "target": "Surah Al-Fath",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 48"
+    },
+    {
+      "source": "Al-Hujurat",
+      "aliases": [
+        "Al-Hujuraat",
+        "The Rooms",
+        "The Private Apartments",
+        "Surah Al-Hujurat",
+        "Surat Al-Hujurat",
+        "Soorah Al-Hujurat"
+      ],
+      "target": "Surah Al-Hujurat",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 49"
+    },
+    {
+      "source": "Qaf",
+      "aliases": [
+        "Surah Qaf",
+        "Soorah Qaf",
+        "Surat Qaf"
+      ],
+      "target": "Surah Qaf",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 50"
+    },
+    {
+      "source": "Adh-Dhariyat",
+      "aliases": [
+        "Al-Dhariyat",
+        "Adh-Dhaariyaat",
+        "Az-Zariyat",
+        "The Winnowing Winds",
+        "The Scattering Winds",
+        "Surah Adh-Dhariyat",
+        "Surat Adh-Dhariyat",
+        "Soorah Adh-Dhariyat"
+      ],
+      "target": "Surah Az-Zariyat",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 51"
+    },
+    {
+      "source": "At-Tur",
+      "aliases": [
+        "Al-Tur",
+        "At-Toor",
+        "The Mount",
+        "Surah At-Tur",
+        "Surat At-Tur",
+        "Soorah At-Tur"
+      ],
+      "target": "Surah At-Toor",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 52"
+    },
+    {
+      "source": "An-Najm",
+      "aliases": [
+        "Al-Najm",
+        "The Star",
+        "Surah An-Najm",
+        "Surat An-Najm",
+        "Soorah An-Najm"
+      ],
+      "target": "Surah An-Najm",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 53"
+    },
+    {
+      "source": "Al-Qamar",
+      "aliases": [
+        "The Moon",
+        "Surah Al-Qamar",
+        "Surat Al-Qamar",
+        "Soorah Al-Qamar"
+      ],
+      "target": "Surah Al-Qamar",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 54"
+    },
+    {
+      "source": "Surah Ar-Rahman",
+      "aliases": [
+        "Surat Ar-Rahman",
+        "Surah Al-Rahman",
+        "Soorah Ar-Rahmaan",
+        "Surah Rahman"
+      ],
+      "target": "Surah Ar-Rahman",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 55"
+    },
+    {
+      "source": "Al-Waqi'ah",
+      "aliases": [
+        "Al-Waqiah",
+        "Al-Waaqi'ah",
+        "Al-Waqia",
+        "The Inevitable",
+        "The Event",
+        "Surah Al-Waqi'ah",
+        "Surat Al-Waqi'ah",
+        "Soorah Al-Waqi'ah"
+      ],
+      "target": "Surah Al-Waqi'ah",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 56"
+    },
+    {
+      "source": "Al-Hadid",
+      "aliases": [
+        "Al-Hadeed",
+        "The Iron",
+        "Surah Al-Hadid",
+        "Surat Al-Hadid",
+        "Soorah Al-Hadid"
+      ],
+      "target": "Surah Al-Hadeed",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 57"
+    },
+    {
+      "source": "Al-Mujadilah",
+      "aliases": [
+        "Al-Mujadila",
+        "Al-Mujaadilah",
+        "The Pleading Woman",
+        "She Who Disputes",
+        "Surah Al-Mujadilah",
+        "Surat Al-Mujadilah",
+        "Soorah Al-Mujadilah"
+      ],
+      "target": "Surah Al-Mujadila",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 58"
+    },
+    {
+      "source": "Al-Hashr",
+      "aliases": [
+        "The Exile",
+        "The Gathering",
+        "Surah Al-Hashr",
+        "Surat Al-Hashr",
+        "Soorah Al-Hashr"
+      ],
+      "target": "Surah Al-Hashr",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 59"
+    },
+    {
+      "source": "Al-Mumtahanah",
+      "aliases": [
+        "Al-Mumtahina",
+        "She That Is to Be Examined",
+        "The Examined One",
+        "Surah Al-Mumtahanah",
+        "Surat Al-Mumtahanah",
+        "Soorah Al-Mumtahanah"
+      ],
+      "target": "Surah Al-Mumtahina",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 60"
+    },
+    {
+      "source": "As-Saff",
+      "aliases": [
+        "Al-Saff",
+        "The Ranks",
+        "The Row",
+        "Surah As-Saff",
+        "Surat As-Saff",
+        "Soorah As-Saff"
+      ],
+      "target": "Surah As-Saff",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 61"
+    },
+    {
+      "source": "Al-Jumu'ah",
+      "aliases": [
+        "Al-Jumuah",
+        "Al-Jumu'a",
+        "Surah Jumuah",
+        "The Congregation",
+        "Friday",
+        "Surah Al-Jumu'ah",
+        "Surat Al-Jumu'ah",
+        "Soorah Al-Jumu'ah"
+      ],
+      "target": "Surah Al-Jumu'ah",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 62"
+    },
+    {
+      "source": "Al-Munafiqun",
+      "aliases": [
+        "Al-Munafiqoon",
+        "Al-Munaafiqoon",
+        "The Hypocrites",
+        "Surah Al-Munafiqun",
+        "Surat Al-Munafiqun",
+        "Soorah Al-Munafiqun"
+      ],
+      "target": "Surah Al-Munafiqoon",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 63"
+    },
+    {
+      "source": "At-Taghabun",
+      "aliases": [
+        "Al-Taghabun",
+        "At-Taghaabun",
+        "The Mutual Disillusion",
+        "Mutual Loss and Gain",
+        "Surah At-Taghabun",
+        "Surat At-Taghabun",
+        "Soorah At-Taghabun"
+      ],
+      "target": "Surah At-Taghabun",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 64"
+    },
+    {
+      "source": "At-Talaq",
+      "aliases": [
+        "Al-Talaq",
+        "At-Talaaq",
+        "Surah Talaq",
+        "The Divorce",
+        "Surah At-Talaq",
+        "Surat At-Talaq",
+        "Soorah At-Talaq"
+      ],
+      "target": "Surah At-Talaq",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 65"
+    },
+    {
+      "source": "At-Tahrim",
+      "aliases": [
+        "Al-Tahrim",
+        "At-Tahreem",
+        "The Prohibition",
+        "Surah At-Tahrim",
+        "Surat At-Tahrim",
+        "Soorah At-Tahrim"
+      ],
+      "target": "Surah At-Tahreem",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 66"
+    },
+    {
+      "source": "Al-Mulk",
+      "aliases": [
+        "The Sovereignty",
+        "The Dominion",
+        "The Kingdom",
+        "Surah Al-Mulk",
+        "Surat Al-Mulk",
+        "Soorah Al-Mulk"
+      ],
+      "target": "Surah Al-Mulk",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 67"
+    },
+    {
+      "source": "Al-Qalam",
+      "aliases": [
+        "Nun",
+        "The Pen",
+        "Surah Al-Qalam",
+        "Surat Al-Qalam",
+        "Soorah Al-Qalam"
+      ],
+      "target": "Surah Al-Qalam",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 68"
+    },
+    {
+      "source": "Al-Haqqah",
+      "aliases": [
+        "Al-Haqqa",
+        "Al-Haaqqah",
+        "The Reality",
+        "The Inevitable Reality",
+        "Surah Al-Haqqah",
+        "Surat Al-Haqqah",
+        "Soorah Al-Haqqah"
+      ],
+      "target": "Surah Al-Haqqa",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 69"
+    },
+    {
+      "source": "Al-Ma'arij",
+      "aliases": [
+        "Al-Maarij",
+        "Al-Ma'aarij",
+        "The Ascending Stairways",
+        "The Ways of Ascent",
+        "Surah Al-Ma'arij",
+        "Surat Al-Ma'arij",
+        "Soorah Al-Ma'arij"
+      ],
+      "target": "Surah Al-Ma'arij",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 70"
+    },
+    {
+      "source": "Surah Nuh",
+      "aliases": [
+        "Surat Nuh",
+        "Soorah Nuh",
+        "Surah Noah",
+        "Surah Nooh"
+      ],
+      "target": "Surah Nuh",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 71"
+    },
+    {
+      "source": "Al-Jinn",
+      "aliases": [
+        "Surah Jinn",
+        "Surah Al-Jinn",
+        "Surat Al-Jinn",
+        "Soorah Al-Jinn"
+      ],
+      "target": "Surah Al-Jinn",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 72"
+    },
+    {
+      "source": "Al-Muzzammil",
+      "aliases": [
+        "Al-Muzammil",
+        "The Enshrouded One",
+        "The Wrapped One",
+        "Surah Al-Muzzammil",
+        "Surat Al-Muzzammil",
+        "Soorah Al-Muzzammil"
+      ],
+      "target": "Surah Al-Muzzammil",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 73"
+    },
+    {
+      "source": "Al-Muddaththir",
+      "aliases": [
+        "Al-Muddathir",
+        "Al-Mudathir",
+        "Al-Muddassir",
+        "The Cloaked One",
+        "The One Wrapped Up",
+        "Surah Al-Muddaththir",
+        "Surat Al-Muddaththir",
+        "Soorah Al-Muddaththir"
+      ],
+      "target": "Surah Al-Muddassir",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 74"
+    },
+    {
+      "source": "Al-Qiyamah",
+      "aliases": [
+        "Al-Qiyama",
+        "Al-Qiyaamah",
+        "The Resurrection",
+        "Surah Al-Qiyamah",
+        "Surat Al-Qiyamah",
+        "Soorah Al-Qiyamah"
+      ],
+      "target": "Surah Al-Qiyamah",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 75"
+    },
+    {
+      "source": "Al-Insan",
+      "aliases": [
+        "Ad-Dahr",
+        "Al-Insaan",
+        "Surah Dahr",
+        "The Man",
+        "The Human",
+        "Surah Al-Insan",
+        "Surat Al-Insan",
+        "Soorah Al-Insan"
+      ],
+      "target": "Surah Al-Insan",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 76"
+    },
+    {
+      "source": "Al-Mursalat",
+      "aliases": [
+        "Al-Mursalaat",
+        "The Emissaries",
+        "Those Sent Forth",
+        "Surah Al-Mursalat",
+        "Surat Al-Mursalat",
+        "Soorah Al-Mursalat"
+      ],
+      "target": "Surah Al-Mursalat",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 77"
+    },
+    {
+      "source": "An-Naba",
+      "aliases": [
+        "Al-Naba",
+        "An-Naba'",
+        "The Tidings",
+        "The Great News",
+        "Surah An-Naba",
+        "Surat An-Naba",
+        "Soorah An-Naba"
+      ],
+      "target": "Surah An-Naba",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 78"
+    },
+    {
+      "source": "An-Nazi'at",
+      "aliases": [
+        "Al-Nazi'at",
+        "An-Naziat",
+        "An-Naazi'aat",
+        "Those Who Pull Out",
+        "The Extractors",
+        "Surah An-Nazi'at",
+        "Surat An-Nazi'at",
+        "Soorah An-Nazi'at"
+      ],
+      "target": "Surah An-Nazi'at",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 79"
+    },
+    {
+      "source": "Abasa",
+      "aliases": [
+        "'Abasa",
+        "Surah Abasa",
+        "He Frowned",
+        "Surat Abasa",
+        "Soorah Abasa"
+      ],
+      "target": "Surah Abasa",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 80"
+    },
+    {
+      "source": "At-Takwir",
+      "aliases": [
+        "Al-Takwir",
+        "At-Takweer",
+        "The Overthrowing",
+        "The Folding Up",
+        "Surah At-Takwir",
+        "Surat At-Takwir",
+        "Soorah At-Takwir"
+      ],
+      "target": "Surah At-Takweer",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 81"
+    },
+    {
+      "source": "Al-Infitar",
+      "aliases": [
+        "Al-Infitaar",
+        "The Cleaving",
+        "The Splitting",
+        "Surah Al-Infitar",
+        "Surat Al-Infitar",
+        "Soorah Al-Infitar"
+      ],
+      "target": "Surah Al-Infitar",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 82"
+    },
+    {
+      "source": "Al-Mutaffifin",
+      "aliases": [
+        "Al-Mutaffifeen",
+        "The Defrauding",
+        "The Dealers in Fraud",
+        "Surah Al-Mutaffifin",
+        "Surat Al-Mutaffifin",
+        "Soorah Al-Mutaffifin"
+      ],
+      "target": "Surah Al-Mutaffifeen",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 83"
+    },
+    {
+      "source": "Al-Inshiqaq",
+      "aliases": [
+        "Al-Inshiqaaq",
+        "The Sundering",
+        "The Splitting Open",
+        "Surah Al-Inshiqaq",
+        "Surat Al-Inshiqaq",
+        "Soorah Al-Inshiqaq"
+      ],
+      "target": "Surah Al-Inshiqaq",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 84"
+    },
+    {
+      "source": "Al-Buruj",
+      "aliases": [
+        "Al-Burooj",
+        "The Mansions of the Stars",
+        "The Constellations",
+        "Surah Al-Buruj",
+        "Surat Al-Buruj",
+        "Soorah Al-Buruj"
+      ],
+      "target": "Surah Al-Burooj",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 85"
+    },
+    {
+      "source": "At-Tariq",
+      "aliases": [
+        "Al-Tariq",
+        "At-Taariq",
+        "The Nightcomer",
+        "The Morning Star",
+        "Surah At-Tariq",
+        "Surat At-Tariq",
+        "Soorah At-Tariq"
+      ],
+      "target": "Surah At-Tariq",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 86"
+    },
+    {
+      "source": "Al-A'la",
+      "aliases": [
+        "Al-Ala",
+        "Al-A'laa",
+        "The Most Exalted",
+        "Surah Al-A'la",
+        "Surat Al-A'la",
+        "Soorah Al-A'la"
+      ],
+      "target": "Surah Al-A'la",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 87"
+    },
+    {
+      "source": "Al-Ghashiyah",
+      "aliases": [
+        "Al-Ghashiya",
+        "Al-Ghaashiyah",
+        "The Overwhelming",
+        "The Overwhelming Event",
+        "Surah Al-Ghashiyah",
+        "Surat Al-Ghashiyah",
+        "Soorah Al-Ghashiyah"
+      ],
+      "target": "Surah Al-Ghashiya",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 88"
+    },
+    {
+      "source": "Al-Fajr",
+      "aliases": [
+        "Surah Fajr",
+        "The Dawn",
+        "The Daybreak",
+        "Surah Al-Fajr",
+        "Surat Al-Fajr",
+        "Soorah Al-Fajr"
+      ],
+      "target": "Surah Al-Fajr",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 89"
+    },
+    {
+      "source": "Al-Balad",
+      "aliases": [
+        "The City",
+        "The Land",
+        "Surah Al-Balad",
+        "Surat Al-Balad",
+        "Soorah Al-Balad"
+      ],
+      "target": "Surah Al-Balad",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 90"
+    },
+    {
+      "source": "Ash-Shams",
+      "aliases": [
+        "Al-Shams",
+        "The Sun",
+        "Surah Ash-Shams",
+        "Surat Ash-Shams",
+        "Soorah Ash-Shams"
+      ],
+      "target": "Surah Ash-Shams",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 91"
+    },
+    {
+      "source": "Al-Layl",
+      "aliases": [
+        "Al-Lail",
+        "The Night",
+        "Surah Al-Layl",
+        "Surat Al-Layl",
+        "Soorah Al-Layl"
+      ],
+      "target": "Surah Al-Lail",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 92"
+    },
+    {
+      "source": "Ad-Duha",
+      "aliases": [
+        "Al-Duha",
+        "Ad-Dhuha",
+        "Adh-Dhuha",
+        "The Morning Hours",
+        "The Forenoon",
+        "Surah Ad-Duha",
+        "Surat Ad-Duha",
+        "Soorah Ad-Duha"
+      ],
+      "target": "Surah Ad-Duha",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 93"
+    },
+    {
+      "source": "Ash-Sharh",
+      "aliases": [
+        "Al-Sharh",
+        "Al-Inshirah",
+        "Alam Nashrah",
+        "The Relief",
+        "The Opening Up",
+        "Surah Ash-Sharh",
+        "Surat Ash-Sharh",
+        "Soorah Ash-Sharh"
+      ],
+      "target": "Surah Ash-Sharh",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 94"
+    },
+    {
+      "source": "At-Tin",
+      "aliases": [
+        "Al-Tin",
+        "At-Teen",
+        "The Fig",
+        "Surah At-Tin",
+        "Surat At-Tin",
+        "Soorah At-Tin"
+      ],
+      "target": "Surah At-Teen",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 95"
+    },
+    {
+      "source": "Al-Alaq",
+      "aliases": [
+        "Al-'Alaq",
+        "Iqra",
+        "The Clot",
+        "The Clinging Clot",
+        "Surah Al-Alaq",
+        "Surat Al-Alaq",
+        "Soorah Al-Alaq"
+      ],
+      "target": "Surah Al-Alaq",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 96"
+    },
+    {
+      "source": "Al-Qadr",
+      "aliases": [
+        "Surah Qadr",
+        "The Power",
+        "Surah Al-Qadr",
+        "Surat Al-Qadr",
+        "Soorah Al-Qadr"
+      ],
+      "target": "Surah Al-Qadr",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 97"
+    },
+    {
+      "source": "Al-Bayyinah",
+      "aliases": [
+        "Al-Bayyina",
+        "The Clear Proof",
+        "The Evidence",
+        "Surah Al-Bayyinah",
+        "Surat Al-Bayyinah",
+        "Soorah Al-Bayyinah"
+      ],
+      "target": "Surah Al-Bayyina",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 98"
+    },
+    {
+      "source": "Az-Zalzalah",
+      "aliases": [
+        "Al-Zalzalah",
+        "Az-Zalzala",
+        "Al-Zilzal",
+        "The Earthquake",
+        "Surah Az-Zalzalah",
+        "Surat Az-Zalzalah",
+        "Soorah Az-Zalzalah"
+      ],
+      "target": "Surah Az-Zalzala",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 99"
+    },
+    {
+      "source": "Al-Adiyat",
+      "aliases": [
+        "Al-'Adiyat",
+        "Al-Aadiyaat",
+        "The Courser",
+        "The Chargers",
+        "Surah Al-Adiyat",
+        "Surat Al-Adiyat",
+        "Soorah Al-Adiyat"
+      ],
+      "target": "Surah Al-Adiyat",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 100"
+    },
+    {
+      "source": "Al-Qari'ah",
+      "aliases": [
+        "Al-Qariah",
+        "Al-Qaari'ah",
+        "Al-Qaria",
+        "The Calamity",
+        "The Striking Hour",
+        "Surah Al-Qari'ah",
+        "Surat Al-Qari'ah",
+        "Soorah Al-Qari'ah"
+      ],
+      "target": "Surah Al-Qari'ah",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 101"
+    },
+    {
+      "source": "At-Takathur",
+      "aliases": [
+        "Al-Takathur",
+        "At-Takaathur",
+        "At-Takasur",
+        "The Rivalry in World Increase",
+        "Competition",
+        "Surah At-Takathur",
+        "Surat At-Takathur",
+        "Soorah At-Takathur"
+      ],
+      "target": "Surah At-Takasur",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 102"
+    },
+    {
+      "source": "Al-Asr",
+      "aliases": [
+        "Al-'Asr",
+        "Surah Asr",
+        "The Declining Day",
+        "The Time",
+        "Surah Al-Asr",
+        "Surat Al-Asr",
+        "Soorah Al-Asr"
+      ],
+      "target": "Surah Al-Asr",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 103"
+    },
+    {
+      "source": "Al-Humazah",
+      "aliases": [
+        "Al-Humaza",
+        "The Traducer",
+        "The Slanderer",
+        "Surah Al-Humazah",
+        "Surat Al-Humazah",
+        "Soorah Al-Humazah"
+      ],
+      "target": "Surah Al-Humaza",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 104"
+    },
+    {
+      "source": "Al-Fil",
+      "aliases": [
+        "Al-Feel",
+        "The Elephant",
+        "Surah Al-Fil",
+        "Surat Al-Fil",
+        "Soorah Al-Fil"
+      ],
+      "target": "Surah Al-Feel",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 105"
+    },
+    {
+      "source": "Quraysh",
+      "aliases": [
+        "Quraish",
+        "Surah Quraysh",
+        "Surah Quraish",
+        "Surat Quraysh",
+        "Soorah Quraysh"
+      ],
+      "target": "Surah Quraish",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 106"
+    },
+    {
+      "source": "Al-Ma'un",
+      "aliases": [
+        "Al-Maun",
+        "Al-Ma'oon",
+        "The Small Kindnesses",
+        "Almsgiving",
+        "Surah Al-Ma'un",
+        "Surat Al-Ma'un",
+        "Soorah Al-Ma'un"
+      ],
+      "target": "Surah Al-Ma'oon",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 107"
+    },
+    {
+      "source": "Al-Kawthar",
+      "aliases": [
+        "Al-Kauthar",
+        "Al-Kausar",
+        "The Abundance",
+        "Surah Al-Kawthar",
+        "Surat Al-Kawthar",
+        "Soorah Al-Kawthar"
+      ],
+      "target": "Surah Al-Kausar",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 108"
+    },
+    {
+      "source": "Al-Kafirun",
+      "aliases": [
+        "Al-Kafiroon",
+        "Al-Kaafiroon",
+        "The Disbelievers",
+        "Surah Al-Kafirun",
+        "Surat Al-Kafirun",
+        "Soorah Al-Kafirun"
+      ],
+      "target": "Surah Al-Kafiroon",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 109"
+    },
+    {
+      "source": "An-Nasr",
+      "aliases": [
+        "Al-Nasr",
+        "The Divine Support",
+        "The Help",
+        "Surah An-Nasr",
+        "Surat An-Nasr",
+        "Soorah An-Nasr"
+      ],
+      "target": "Surah An-Nasr",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 110"
+    },
+    {
+      "source": "Al-Masad",
+      "aliases": [
+        "Al-Lahab",
+        "Tabbat",
+        "The Palm Fibre",
+        "The Flame",
+        "Surah Al-Masad",
+        "Surat Al-Masad",
+        "Soorah Al-Masad"
+      ],
+      "target": "Surah Al-Masad",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 111"
+    },
+    {
+      "source": "Al-Ikhlas",
+      "aliases": [
+        "Al-Ikhlaas",
+        "The Sincerity",
+        "The Purity",
+        "Surah Ikhlas",
+        "Surah Al-Ikhlas",
+        "Surat Al-Ikhlas",
+        "Soorah Al-Ikhlas"
+      ],
+      "target": "Surah Al-Ikhlas",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 112"
+    },
+    {
+      "source": "Al-Falaq",
+      "aliases": [
+        "The Dawn Break",
+        "Surah Al-Falaq",
+        "Surat Al-Falaq",
+        "Soorah Al-Falaq"
+      ],
+      "target": "Surah Al-Falaq",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 113"
+    },
+    {
+      "source": "An-Nas",
+      "aliases": [
+        "Al-Nas",
+        "An-Naas",
+        "The Mankind",
+        "Mankind",
+        "Surah An-Nas",
+        "Surat An-Nas",
+        "Soorah An-Nas"
+      ],
+      "target": "Surah An-Naas",
+      "category": "surah",
+      "honorific": "",
+      "note": "Surah 114"
+    },
+    {
+      "source": "Makkah",
+      "aliases": [
+        "Mecca",
+        "Makka",
+        "Makkah al-Mukarramah",
+        "Mecca al-Mukarramah"
+      ],
+      "target": "Makkah",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Madinah",
+      "aliases": [
+        "Medina",
+        "Madina",
+        "Al-Madinah",
+        "Madinah al-Munawwarah",
+        "Medina al-Munawwara",
+        "Yathrib"
+      ],
+      "target": "Madinah",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Ka'bah",
+      "aliases": [
+        "Kaaba",
+        "Kabah",
+        "Ka'ba",
+        "the Kaaba",
+        "the Ka'bah"
+      ],
+      "target": "Ka'bah",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Masjid al-Haram",
+      "aliases": [
+        "Al-Masjid al-Haram",
+        "the Sacred Mosque",
+        "the Grand Mosque",
+        "Masjid ul-Haram"
+      ],
+      "target": "Masjid-e-Haram",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Masjid an-Nabawi",
+      "aliases": [
+        "Al-Masjid an-Nabawi",
+        "the Prophet's Mosque",
+        "Masjid al-Nabawi",
+        "Masjid un-Nabawi"
+      ],
+      "target": "Masjid-e-Nabawi",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Quds",
+      "aliases": [
+        "Jerusalem",
+        "Bayt al-Maqdis",
+        "Baytul Maqdis",
+        "Bait ul-Maqdis"
+      ],
+      "target": "Baitul Maqdis",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Masjid al-Aqsa",
+      "aliases": [
+        "Al-Masjid al-Aqsa",
+        "Al-Aqsa Mosque",
+        "the Aqsa Mosque",
+        "Masjid ul-Aqsa"
+      ],
+      "target": "Masjid-e-Aqsa",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Ta'if",
+      "aliases": [
+        "Taif",
+        "At-Ta'if"
+      ],
+      "target": "Taif",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Badr",
+      "aliases": [
+        "Battle of Badr",
+        "Ghazwah Badr"
+      ],
+      "target": "Badr",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Uhud",
+      "aliases": [
+        "Battle of Uhud",
+        "Mount Uhud",
+        "Ghazwah Uhud"
+      ],
+      "target": "Uhud",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Khaybar",
+      "aliases": [
+        "Khaibar",
+        "Battle of Khaybar"
+      ],
+      "target": "Khaibar",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Hudaybiyyah",
+      "aliases": [
+        "Hudaibiyah",
+        "Hudaybiyah",
+        "Al-Hudaybiyyah",
+        "Treaty of Hudaybiyyah",
+        "Hudaibiya"
+      ],
+      "target": "Hudaibiya",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Tabuk",
+      "aliases": [
+        "Tabook",
+        "Expedition of Tabuk",
+        "Battle of Tabuk"
+      ],
+      "target": "Tabook",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Sham",
+      "aliases": [
+        "Ash-Sham",
+        "Al-Sham",
+        "Greater Syria",
+        "the Levant",
+        "Bilad ash-Sham"
+      ],
+      "target": "Shaam",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Egypt",
+      "aliases": [
+        "Misr"
+      ],
+      "target": "Misr",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Yemen",
+      "aliases": [
+        "Yaman",
+        "Al-Yaman"
+      ],
+      "target": "Yaman",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Najd",
+      "aliases": [
+        "Nejd"
+      ],
+      "target": "Najd",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Hijaz",
+      "aliases": [
+        "Hejaz",
+        "Al-Hijaz"
+      ],
+      "target": "Hijaz",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Arafat",
+      "aliases": [
+        "Arafah",
+        "Mount Arafat",
+        "the plain of Arafat",
+        "Day of Arafah"
+      ],
+      "target": "Arafat",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Mina",
+      "aliases": [
+        "Mina valley"
+      ],
+      "target": "Mina",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Muzdalifah",
+      "aliases": [
+        "Muzdalifa"
+      ],
+      "target": "Muzdalifa",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Safa and Marwah",
+      "aliases": [
+        "As-Safa and Al-Marwah",
+        "Safa and Marwa",
+        "Al-Safa and Al-Marwah"
+      ],
+      "target": "Safa aur Marwah",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Riyadh",
+      "aliases": [
+        "Riyad",
+        "Ar-Riyadh"
+      ],
+      "target": "Riyaz",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Abyssinia",
+      "aliases": [
+        "Habasha",
+        "Ethiopia",
+        "Habashah"
+      ],
+      "target": "Habsha",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Persia",
+      "aliases": [
+        "Faris",
+        "Fars"
+      ],
+      "target": "Faris",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Al-Andalus",
+      "aliases": [
+        "Andalusia",
+        "Andalus",
+        "Muslim Spain"
+      ],
+      "target": "Andalus",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Ghar Hira",
+      "aliases": [
+        "Cave of Hira",
+        "Cave Hira",
+        "Hira"
+      ],
+      "target": "Ghar-e-Hira",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Ghar Thawr",
+      "aliases": [
+        "Cave of Thawr",
+        "Cave Thawr",
+        "Thawr"
+      ],
+      "target": "Ghar-e-Saur",
+      "category": "place",
+      "honorific": ""
+    },
+    {
+      "source": "Alhamdulillah",
+      "aliases": [
+        "Al-Hamdu lillah",
+        "All praise is due to Allah",
+        "Praise be to Allah",
+        "all praise belongs to Allah"
+      ],
+      "target": "Alhamdulillah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Insha'Allah",
+      "aliases": [
+        "Inshallah",
+        "In sha Allah",
+        "Insha Allah",
+        "God willing",
+        "if Allah wills"
+      ],
+      "target": "Insha'Allah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Masha'Allah",
+      "aliases": [
+        "Mashallah",
+        "Ma sha Allah",
+        "Masha Allah"
+      ],
+      "target": "Masha'Allah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Subhan'Allah",
+      "aliases": [
+        "Subhanallah",
+        "Subhan Allah",
+        "Glory be to Allah",
+        "Glorified is Allah"
+      ],
+      "target": "Subhan'Allah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Jazakallahu Khairan",
+      "aliases": [
+        "Jazak Allah Khair",
+        "Jazakallah Khair",
+        "JazakAllah",
+        "may Allah reward you with good"
+      ],
+      "target": "Jazakallahu Khairan",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "La ilaha illallah",
+      "aliases": [
+        "La ilaha illa Allah",
+        "Laa ilaaha illallaah",
+        "there is no god but Allah",
+        "there is no deity worthy of worship except Allah",
+        "none has the right to be worshipped except Allah",
+        "the Kalimah"
+      ],
+      "target": "La ilaha illallah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Bismillah",
+      "aliases": [
+        "Bismillah ar-Rahman ar-Rahim",
+        "Bismillahir Rahmanir Rahim",
+        "In the name of Allah",
+        "In the Name of Allah, the Most Gracious, the Most Merciful"
+      ],
+      "target": "Bismillah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Astaghfirullah",
+      "aliases": [
+        "Astaghfirullaah",
+        "I seek forgiveness from Allah",
+        "I seek Allah's forgiveness"
+      ],
+      "target": "Astaghfirullah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Ameen",
+      "aliases": [
+        "Amin",
+        "Aameen",
+        "Amen"
+      ],
+      "target": "Aameen",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Barakallahu feek",
+      "aliases": [
+        "Barakallahu fik",
+        "BarakAllahu feekum",
+        "may Allah bless you"
+      ],
+      "target": "Barakallahu feek",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Allahu Akbar",
+      "aliases": [
+        "Allah is the Greatest",
+        "Allahu Akbar (Allah is Great)",
+        "Takbir",
+        "Takbeer"
+      ],
+      "target": "Allahu Akbar",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Assalamu Alaikum",
+      "aliases": [
+        "As-salamu alaykum",
+        "Assalam o Alaikum",
+        "Salam alaikum",
+        "peace be upon you",
+        "As-Salaam-Alaikum"
+      ],
+      "target": "Assalamu Alaikum",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Wa Alaikum Assalam",
+      "aliases": [
+        "Wa alaykum as-salam",
+        "Walaikum Assalam",
+        "and upon you be peace"
+      ],
+      "target": "Wa Alaikum Assalam",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Inna lillahi wa inna ilayhi raji'un",
+      "aliases": [
+        "Inna lillahi wa inna ilaihi rajioon",
+        "To Allah we belong and to Him we shall return",
+        "Verily we belong to Allah and to Him we return",
+        "Innaa lillaahi wa innaa ilayhi raaji'oon"
+      ],
+      "target": "Inna lillahi wa inna ilaihi raji'oon",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Allahu A'lam",
+      "aliases": [
+        "Allah knows best",
+        "Wallahu A'lam",
+        "Wallahu Alam",
+        "and Allah knows best"
+      ],
+      "target": "Allahu A'lam",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Tabarakallah",
+      "aliases": [
+        "Tabarak Allah",
+        "Blessed is Allah"
+      ],
+      "target": "Tabarakallah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Fi Amanillah",
+      "aliases": [
+        "Fi Aman Allah",
+        "in Allah's protection"
+      ],
+      "target": "Fi Amanillah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Sadaqallahul Azim",
+      "aliases": [
+        "Sadaqallahul Adheem",
+        "Allah the Almighty has spoken the truth"
+      ],
+      "target": "Sadaqallahul Azeem",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Hasbunallahu wa ni'mal wakil",
+      "aliases": [
+        "Hasbunallah wa ni'mal wakeel",
+        "Allah is sufficient for us and He is the best disposer of affairs",
+        "Sufficient for us is Allah"
+      ],
+      "target": "Hasbunallahu wa ni'mal Wakeel",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "La hawla wa la quwwata illa billah",
+      "aliases": [
+        "La hawla wala quwwata illa billah",
+        "there is no might nor power except with Allah",
+        "there is no power and no strength except with Allah"
+      ],
+      "target": "La haula wa la quwwata illa billah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Rabbana",
+      "aliases": [
+        "Our Lord",
+        "O our Lord"
+      ],
+      "target": "Rabbana",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Ya Allah",
+      "aliases": [
+        "O Allah"
+      ],
+      "target": "Ya Allah",
+      "category": "phrase",
+      "honorific": ""
+    },
+    {
+      "source": "Sallallahu Alaihi Wasallam",
+      "aliases": [
+        "peace and blessings of Allah be upon him",
+        "may Allah's peace and blessings be upon him",
+        "may the peace and blessings of Allah be upon him"
+      ],
+      "target": "Sallallahu Alaihi Wasallam",
+      "category": "phrase",
+      "honorific": "",
+      "note": "honorific phrase; never abbreviate"
+    }
+  ]
+}

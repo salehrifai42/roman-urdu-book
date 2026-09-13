@@ -1,0 +1,19 @@
+# Translation run directories
+*_roman_urdu/
+
+# Full-pipeline test artifacts
+tests/.artifacts/*
+!tests/.artifacts/.gitkeep
+!tests/.artifacts/README.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS files
+.DS_Store
+
+# Local agent / tooling configs
+.claude/*
+.agents/

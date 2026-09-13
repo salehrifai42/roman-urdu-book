@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "notes": [
+    "Machine-readable twin of the spelling table in references/style-guide.md; a test keeps them in sync.",
+    "The linter matches `reject` variants as whole words, case-insensitively, and replaces them case-preservingly (Keh -> Ke, KEH -> KE) when safe_fix is true.",
+    "When `regex` is present it is used instead of the reject list for matching (Python re syntax, applied with re.IGNORECASE unless the pattern sets its own flags).",
+    "Fenced code, URLs, Arabic-script runs and citation parentheses are never touched.",
+    "`main` (= I) is deliberately never a reject variant of `mein` (= in)."
+  ],
+  "rules": [
+    {
+      "canonical": "ke",
+      "reject": [
+        "keh",
+        "kay"
+      ],
+      "safe_fix": true,
+      "note": "conjunction 'that' and postposition 'of' are both `ke`; `keh` is left alone when it is the verb stem (keh dijiye, keh kar, keh diya)",
+      "regex": "(?i)\\b(?:keh|kay)\\b(?!\\s+(?:dijiye|dijiyega|dena|dete|deti|deta|diya|di|do|dun|doon|den|kar|ke|raha|rahi|rahe|sakta|sakte|sakti|chuka|chuke|chuki|dunga|doonga|lena|gaya|gayi|gaye|rakha|kr))"
+    },
+    {
+      "canonical": "mein",
+      "reject": [
+        "mei",
+        "mn",
+        "mayn"
+      ],
+      "safe_fix": true,
+      "note": "'in'; never touch `main` (= I)"
+    },
+    {
+      "canonical": "nahi",
+      "reject": [
+        "nahin",
+        "nahee",
+        "nai",
+        "nhi"
+      ],
+      "safe_fix": true,
+      "note": "'not'"
+    },
+    {
+      "canonical": "yeh",
+      "reject": [
+        "ye",
+        "yah"
+      ],
+      "safe_fix": true,
+      "note": "'this/these'"
+    },
+    {
+      "canonical": "woh",
+      "reject": [
+        "wo",
+        "vo",
+        "voh"
+      ],
+      "safe_fix": true,
+      "note": "'that/those/he/she'"
+    },
+    {
+      "canonical": "kya",
+      "reject": [
+        "kia",
+        "kiya?"
+      ],
+      "safe_fix": false,
+      "note": "'what'; `kiya` (= did) is a different word, so only warn"
+    },
+    {
+      "canonical": "aur",
+      "reject": [
+        "our",
+        "or"
+      ],
+      "safe_fix": false,
+      "note": "'and'; `our`/`or` are also English words, so only warn"
+    },
+    {
+      "canonical": "liye",
+      "reject": [
+        "liay",
+        "liey",
+        "lye"
+      ],
+      "safe_fix": true,
+      "note": "'for'; always two words: `ke liye`"
+    },
+    {
+      "canonical": "kyunke",
+      "reject": [
+        "kyunki",
+        "kyun ke",
+        "kyonke",
+        "kyonki",
+        "kyunkay"
+      ],
+      "safe_fix": true,
+      "note": "'because'"
+    },
+    {
+      "canonical": "isliye",
+      "reject": [
+        "is liye",
+        "isliay",
+        "is lie"
+      ],
+      "safe_fix": true,
+      "note": "'therefore'"
+    },
+    {
+      "canonical": "balke",
+      "reject": [
+        "balkeh",
+        "balkay",
+        "bulkay"
+      ],
+      "safe_fix": true,
+      "note": "'but rather'"
+    },
+    {
+      "canonical": "saath",
+      "reject": [
+        "sath",
+        "sathh"
+      ],
+      "safe_fix": true,
+      "note": "'with'"
+    },
+    {
+      "canonical": "jaise",
+      "reject": [
+        "jese",
+        "jaisay",
+        "jaisey"
+      ],
+      "safe_fix": true,
+      "note": "'like / such as'"
+    },
+    {
+      "canonical": "bhi",
+      "reject": [
+        "bhee",
+        "bhy"
+      ],
+      "safe_fix": true,
+      "note": "'also'"
+    },
+    {
+      "canonical": "hai",
+      "reject": [
+        "hay",
+        "hei",
+        "hy"
+      ],
+      "safe_fix": false,
+      "note": "'is'; `hay` can be English, so only warn"
+    },
+    {
+      "canonical": "hain",
+      "reject": [
+        "hen",
+        "hayn",
+        "hein"
+      ],
+      "safe_fix": false,
+      "note": "'are'; `hen` is English, so only warn"
+    },
+    {
+      "canonical": "tha",
+      "reject": [
+        "thaa"
+      ],
+      "safe_fix": true,
+      "note": "'was' (m.)"
+    },
+    {
+      "canonical": "thi",
+      "reject": [
+        "thee"
+      ],
+      "safe_fix": false,
+      "note": "'was' (f.); `thee` is archaic English, so only warn"
+    },
+    {
+      "canonical": "chahiye",
+      "reject": [
+        "chahye",
+        "chahiay",
+        "chaheye"
+      ],
+      "safe_fix": true,
+      "note": "'should'"
+    },
+    {
+      "canonical": "Tauheed",
+      "reject": [
+        "Tawheed",
+        "Tavheed",
+        "Tauhid",
+        "Tawhid",
+        "Tawheeed"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Tawheed|Tavheed|Tauhid|Tawhid)\\b",
+      "note": "anchored to these four words only, so Tawakkul / Tawassul / Tawbah are untouched"
+    },
+    {
+      "canonical": "Ta'ala",
+      "reject": [
+        "Ta'aala",
+        "Taala",
+        "Ta'alaa",
+        "Ta'aalaa",
+        "Taalaa",
+        "Ta`ala"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\bTa['`]?aa?la+\\b(?<!\\bTa'ala)",
+      "note": "after Allah; regex excludes the canonical form itself"
+    },
+    {
+      "canonical": "Hadees",
+      "reject": [
+        "Hadith",
+        "Hadis",
+        "Hadeeth",
+        "Hadeth"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Hadith|Hadis|Hadeeth|Hadeth)\\b",
+      "note": "plural: Ahadees; book titles like 'Ahl-e-Hadees' follow the same spelling"
+    },
+    {
+      "canonical": "Ibadat",
+      "reject": [
+        "Ibaadat",
+        "Ibadah",
+        "Ibaadah"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Ibaadat|Ibadah|Ibaadah)\\b",
+      "note": "'worship'"
+    },
+    {
+      "canonical": "Namaz",
+      "reject": [
+        "Namaaz",
+        "Nimaz"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Namaaz|Nimaz)\\b",
+      "note": "'prayer'; keep `Salah` only if the source stresses the Arabic term"
+    },
+    {
+      "canonical": "Qur'an",
+      "reject": [
+        "Quran",
+        "Koran",
+        "Qur'aan",
+        "Quraan"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Quran|Koran|Qur'aan|Quraan)\\b",
+      "note": "with apostrophe"
+    },
+    {
+      "canonical": "Rasoolullah",
+      "reject": [
+        "Rasulullah",
+        "Rasool Allah",
+        "Rasul Allah",
+        "Rasoolallah",
+        "Rasulallah"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Rasulullah|Rasool\\s+Allah|Rasul\\s+Allah|Rasoolallah|Rasulallah)\\b",
+      "note": "one word"
+    },
+    {
+      "canonical": "Sallallahu Alaihi Wasallam",
+      "reject": [
+        "Sallallahu alaihe wa sallam",
+        "Sallallahu Alaihi wa Sallam",
+        "Sallallahu alayhi wasallam",
+        "Sallalahu alaihi wasalam",
+        "SAW",
+        "SAWS",
+        "PBUH",
+        "S.A.W",
+        "S.A.W.W"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\bsall?all?a+hu\\s+['`]?ala[iy]h[ei]\\s*wa\\s*sall?am\\b(?<!Sallallahu Alaihi Wasallam)|\\(\\s*(?:SAW|SAWS|SAWW|PBUH|S\\.A\\.W\\.?W?\\.?)\\s*\\)",
+      "note": "the Prophet's honorific, in full, in parentheses, after every mention; the regex excludes the canonical form itself"
+    },
+    {
+      "canonical": "Radiallahu Anhu",
+      "reject": [
+        "Raziallahu anhu",
+        "raziyallahu anhu",
+        "Radiyallahu anhu",
+        "Radhiallahu anhu",
+        "RA",
+        "R.A"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\bra[dz]h?i?y?all?a+hu\\s+['`]?anhu\\b(?<!Radiallahu Anhu)|\\(\\s*(?:RA|R\\.A\\.?)\\s*\\)",
+      "note": "male companion"
+    },
+    {
+      "canonical": "Radiallahu Anha",
+      "reject": [
+        "Raziallahu anha",
+        "raziyallahu anha",
+        "Radiyallahu anha",
+        "Radhiallahu anha"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\bra[dz]h?i?y?all?a+hu\\s+['`]?anha\\b(?<!Radiallahu Anha)",
+      "note": "female companion"
+    },
+    {
+      "canonical": "Radiallahu Anhum",
+      "reject": [
+        "Raziallahu anhum",
+        "raziyallahu anhum",
+        "Radiyallahu anhum",
+        "Radhiallahu anhum"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\bra[dz]h?i?y?all?a+hu\\s+['`]?anhum\\b(?<!Radiallahu Anhum)",
+      "note": "group of companions"
+    },
+    {
+      "canonical": "Radiallahu Anhuma",
+      "reject": [
+        "Raziallahu anhuma",
+        "raziyallahu anhuma",
+        "Radiyallahu anhuma",
+        "Radhiallahu anhuma"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\bra[dz]h?i?y?all?a+hu\\s+['`]?anhuma\\b(?<!Radiallahu Anhuma)",
+      "note": "two companions"
+    },
+    {
+      "canonical": "Rahimahullah",
+      "reject": [
+        "Rahimullah",
+        "rahmatullah alaih",
+        "rahmatullahi alaih",
+        "Rahimahullaah",
+        "RH"
+      ],
+      "safe_fix": false,
+      "case_insensitive": true,
+      "note": "deceased scholar; only warn because 'rahmatullah alaih' may be a deliberate quotation"
+    },
+    {
+      "canonical": "Alaihissalam",
+      "reject": [
+        "alaihi salam",
+        "alayhis salam",
+        "alaihis salaam",
+        "alayhi as-salam",
+        "alaihi as-salam",
+        "(AS)",
+        "A.S"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b['`]?ala[iy]h[ei]s?\\s+(?:as[- ])?sal[aā]+m\\b|\\(\\s*(?:AS|A\\.S\\.?)\\s*\\)",
+      "note": "prophets other than Muhammad; Maryam takes Alaihassalam"
+    },
+    {
+      "canonical": "Aakhirat",
+      "reject": [
+        "Akhirat",
+        "Akhirah",
+        "Aakhirah",
+        "Akhira"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Akhirat|Akhirah|Aakhirah|Akhira)\\b",
+      "note": "'the Hereafter'"
+    },
+    {
+      "canonical": "Qiyamat",
+      "reject": [
+        "Qiyamah",
+        "Qayamat",
+        "Qiyaamat",
+        "Qayamah"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "(?<!Al-)(?<!al-)\\b(?:Qiyamah|Qayamat|Qiyaamat|Qayamah)\\b",
+      "note": "'Day of Judgement'; the surah name 'Surah Al-Qiyamah' is left alone"
+    },
+    {
+      "canonical": "Imaan",
+      "reject": [
+        "Eman",
+        "Emaan",
+        "Iman"
+      ],
+      "safe_fix": false,
+      "case_insensitive": true,
+      "note": "'faith'; only warn because `Iman` is also a personal name"
+    },
+    {
+      "canonical": "Bid'at",
+      "reject": [
+        "Bidat",
+        "Bid'ah",
+        "Bidah",
+        "Bida'"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Bidat|Bid'ah|Bidah|Bida')\\b",
+      "note": "'innovation'"
+    },
+    {
+      "canonical": "Duniya",
+      "reject": [
+        "Dunya",
+        "Dunia",
+        "Duniyaa"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Dunya|Dunia|Duniyaa)\\b",
+      "note": "'this world'"
+    },
+    {
+      "canonical": "Jannat",
+      "reject": [
+        "Jannah",
+        "Jannath"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Jannah|Jannath)\\b",
+      "note": "'Paradise'"
+    },
+    {
+      "canonical": "Ramzan",
+      "reject": [
+        "Ramadan",
+        "Ramadhan",
+        "Ramazan"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "regex": "\\b(?:Ramadan|Ramadhan|Ramazan)\\b",
+      "note": "z for the Arabic dad, as in Indo-Pak usage"
+    }
+  ]
+}
