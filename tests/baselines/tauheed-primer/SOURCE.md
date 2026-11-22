@@ -12,6 +12,6 @@ Self-written English sample (no third-party text) used for the full-pipeline smo
 | `detect_domain.py` | `islamic`, confidence not `low` | `general` means detection thresholds or the glossary changed |
 | `glossary.py seed` terms written | at least 12 | fewer means alias matching regressed |
 | `lint_roman_urdu.py --all` on the fixture | 0 errors, 0 auto-fixes | any `E_*` means the linter or fixture drifted |
-| `book.html` | contains `dir="rtl"` around the Arabic verse, a `Fehrist-e-Mazaameen` TOC and a cover section | missing RTL means `wrap_arabic_runs` regressed |
+| `book.html` | contains `dir="rtl"` around the Arabic verse, a `Fehrist` TOC and a cover section | missing RTL means `wrap_arabic_runs` regressed |
 | Honorifics in the fixture | `(Sallallahu Alaihi Wasallam)` after all 4 Prophet mentions, `(Radiallahu Anhu)` after Abu Hurairah, `(Rahimahullah)` after Ibn Taimiyyah | a missing one is a fixture bug |
 | Citations in the fixture | `(Surah Al-Ikhlas: 1)`, `(Sahih Bukhari: 1)`, `[^1]` all present and unchanged | any change fails `E_CITATION` |

@@ -21,7 +21,7 @@ MARKDOWN PRESERVATION (mechanical rules; a linter checks them)
 
 TRANSLATION RULES
 7. Translate everything that is English prose: body text, headings, captions, list items, table cells, footnotes, alt text.
-8. Roman Urdu spelling: use ONLY the canonical forms in the style guide's spelling table (ke, mein, main [= I], nahi, yeh, woh, kya, aur, liye, kyunke, isliye, balke, hai/hain, tha/the/thi, Tauheed, Ta'ala, ...). Long vowels are doubled (aasaan, tamaam, kiraam). Use the apostrophe for ain/hamza (ma'na, du'a, Qur'an, Ta'ala). Izafat is hyphenated: Tauheed-e-Rububiyat, Fehrist-e-Mazaameen. Numbers stay digits.
+8. Roman Urdu spelling: use ONLY the canonical forms in the style guide's spelling table (ke, mein, main [= I], nahi, yeh, woh, kya, aur, liye, kyunke, isliye, balke, hai/hain, tha/the/thi, Tauheed, Ta'ala, ...). Long vowels are doubled (aasaan, tamaam, kiraam). Use the apostrophe for ain/hamza (ma'na, du'a, Qur'an, Ta'ala). Izafat is hyphenated: Tauheed-e-Rububiyat, Sahaba-e-Kiraam. Numbers stay digits.
 9. Register: clear, respectful, spoken-literary Urdu as used in Roman Urdu Islamic books. Prefer everyday Urdu words over obscure Persian/Arabic ones unless the source is technical. Sentences may be re-ordered for natural Urdu (subject-object-verb), but content, emphasis and paragraph boundaries must match the source. Do not summarise, do not add explanations, do not omit sentences.
 10. Do NOT translate; keep them (transliterated per the term table or the style guide):
     - Names of people, places, tribes, books, scholars, publishers.
@@ -42,7 +42,7 @@ TRANSLATION RULES
     - Companions -> "(Radiallahu Anhu)" male, "(Radiallahu Anha)" female, "(Radiallahu Anhum)" plural, "(Radiallahu Anhuma)" dual.
     - Deceased scholars -> "(Rahimahullah)"; living scholars -> "(Hafizahullah)" only if the source indicates they are alive.
     - Do not add honorifics to non-religious figures, and never to the author of the book unless the source does.
-14. Headings: translate headings; keep them short; Title Case for Roman Urdu headings (e.g. "## Tauheed Ki Tareef", "### Tauheed Ki Aqsaam"). Do not uppercase whole headings. Labels: "Chapter 3" -> "Baab 3"; "Section" -> "Fasl"; "Introduction" -> "Muqaddimah"; "Preface"/"Foreword" -> "Taqdeem"; "Conclusion" -> "Khatimah"; "Contents" -> "Fehrist-e-Mazaameen"; "Notes"/"Footnotes" -> "Hawashi"; "Bibliography"/"References" -> "Maakhaz".
+14. Headings: translate headings; keep them short; Title Case for Roman Urdu headings (e.g. "## Tauheed Ki Tareef", "### Tauheed Ki Aqsaam"). Do not uppercase whole headings. Labels: "Chapter 3" -> "Baab 3"; "Section" -> "Fasl"; "Introduction" -> "Muqaddima"; "Preface"/"Foreword" -> "Taqdeem"; "Conclusion" -> "Khatima"; "Contents" -> "Fehrist"; "Notes"/"Footnotes" -> "Hawashi"; "Bibliography"/"References" -> "Maakhaz".
 15. Punctuation: English punctuation set (. , ; : ? !), straight double quotes for quotations, no Urdu/Arabic punctuation marks, no Urdu script anywhere (Arabic script only for quoted Arabic that the source already contains). Keep the source's paragraph breaks.
 
 <!-- IF:TERM_TABLE -->

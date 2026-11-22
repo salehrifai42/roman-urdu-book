@@ -193,6 +193,43 @@
       "note": "'should'"
     },
     {
+      "canonical": "parh",
+      "reject": [
+        "padh"
+      ],
+      "safe_fix": true,
+      "note": "verb stem 'to read / recite' (parhna, parhta, parhi, parhkar); `padh-` is Hindi-leaning. The regex rewrites only the stem so inflections keep their endings",
+      "regex": "(?i)(?<![\\w'])padh(?=[a-z]*(?![\\w']))"
+    },
+    {
+      "canonical": "Muqaddima",
+      "reject": [
+        "Muqaddimah"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "note": "'Introduction' label"
+    },
+    {
+      "canonical": "Khatima",
+      "reject": [
+        "Khatimah"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "note": "'Conclusion' label"
+    },
+    {
+      "canonical": "Fehrist",
+      "reject": [
+        "Fehrist-e-Mazaameen",
+        "Fehrist-e-Mazameen"
+      ],
+      "safe_fix": true,
+      "case_insensitive": true,
+      "note": "'Contents' label"
+    },
+    {
       "canonical": "Tauheed",
       "reject": [
         "Tawheed",

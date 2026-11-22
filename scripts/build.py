@@ -350,7 +350,7 @@ def build_html(out_dir, book_md, toc_depth, tmpdir):
     html_path = os.path.join(out_dir, 'book.html')
     template = _template_with_css(tmpdir)
     args = [
-        'book.md', '-f', 'markdown+smart', '-t', 'html5', '--standalone',
+        'book.md', '-f', 'markdown+smart', '-t', 'html5', '--standalone', '--wrap=none',
         '--toc', f'--toc-depth={toc_depth}', '--template', template,
         '--resource-path', out_dir, '-o', html_path,
     ]
@@ -384,6 +384,64 @@ def build_epub(out_dir, toc_depth, cover=None):
     return (epub_path, '') if ok else (None, msg)
 
 
+# ---------------------------------------------------------------------------
+# Fehrist page numbers (two-pass PDF render)
+#
+# Browser engines have no target-counter(), so the contents page cannot show
+# page numbers in one pass. Pass 1 renders with a hidden "{pN}" token in every
+# Fehrist entry; the token lands inside the entry's link annotation, and
+# `pdftohtml -xml` reports which page that link resolves to. Pass 2 renders
+# again with the numbers filled in. The tokens occupy a fixed-width box, so
+# both passes have identical pagination.
+# ---------------------------------------------------------------------------
+
+_TOC_NAV_RE = re.compile(r'(<nav class="toc"[^>]*>)(.*?)(</nav>)', re.S)
+_TOC_ANCHOR_RE = re.compile(r'(<a href="#[^"]+" id="toc-[^"]+">)(.*?)(</a>)', re.S)
+_TOC_TOKEN_RE = re.compile(r'\{p(\d+)\}')
+
+
+def add_toc_page_placeholders(html):
+    """Wrap each Fehrist entry as <span class=toc-text>..</span><span class=toc-page pending>{pN}</span>."""
+    m = _TOC_NAV_RE.search(html)
+    if not m:
+        return html, 0
+    counter = [0]
+
+    def repl(a):
+        counter[0] += 1
+        return (f'{a.group(1)}<span class="toc-text">{a.group(2)}</span>'
+                f'<span class="toc-page pending">{{p{counter[0]}}}</span>{a.group(3)}')
+
+    nav = _TOC_ANCHOR_RE.sub(repl, m.group(2))
+    return html[:m.start(2)] + nav + html[m.end(2):], counter[0]
+
+
+def extract_toc_pages(pdf_path):
+    """Return {token_index: page_number} by reading pass-1 link annotations with pdftohtml."""
+    exe = shutil.which('pdftohtml')
+    if not exe:
+        return {}
+    try:
+        res = subprocess.run([exe, '-xml', '-i', '-q', '-enc', 'UTF-8', '-stdout', pdf_path],
+                             capture_output=True, timeout=300)
+    except (OSError, subprocess.SubprocessError):
+        return {}
+    xml = res.stdout.decode('utf-8', 'replace')
+    pages = {}
+    # A token sits inside an <a href="...#PAGE"> wrapper of the same <text> element.
+    for m in re.finditer(r'<a href="[^"]*#(\d+)"[^>]*>((?:(?!</a>).)*?)\{p(\d+)\}', xml, re.S):
+        pages.setdefault(int(m.group(3)), int(m.group(1)))
+    return pages
+
+
+def fill_toc_pages(html, pages):
+    def repl(m):
+        n = pages.get(int(m.group(1)))
+        return str(n) if n else ''
+    html = _TOC_TOKEN_RE.sub(repl, html)
+    return html.replace('class="toc-page pending"', 'class="toc-page"')
+
+
 def build_pdf(out_dir, html_path, renderer, page_size):
     pdf_path = os.path.join(out_dir, 'book.pdf')
     try:
@@ -391,9 +449,29 @@ def build_pdf(out_dir, html_path, renderer, page_size):
         import render_pdf
     except ImportError as e:
         return None, f'render_pdf.py unavailable: {e}'
-    ok, name, msg = render_pdf.render(html_path, pdf_path, preferred=renderer, page_size=page_size)
+    html = Path(html_path).read_text(encoding='utf-8')
+    tagged, count = add_toc_page_placeholders(html)
+    # The temporary HTML must sit next to book.html so relative media paths resolve.
+    tmp_html = os.path.join(out_dir, '.book_pdf_pass.html')
+    tmp_pdf = os.path.join(out_dir, '.book_pdf_pass1.pdf')
+    numbered = False
+    try:
+        if count:
+            Path(tmp_html).write_text(tagged, encoding='utf-8')
+            ok, name, msg = render_pdf.render(tmp_html, tmp_pdf, preferred=renderer, page_size=page_size)
+            pages = extract_toc_pages(tmp_pdf) if ok else {}
+            if ok and len(pages) >= max(1, count // 2):
+                Path(tmp_html).write_text(fill_toc_pages(tagged, pages), encoding='utf-8')
+                ok, name, msg = render_pdf.render(tmp_html, pdf_path, preferred=renderer, page_size=page_size)
+                numbered = ok
+        if not numbered:
+            ok, name, msg = render_pdf.render(html_path, pdf_path, preferred=renderer, page_size=page_size)
+    finally:
+        for f in (tmp_html, tmp_pdf):
+            if os.path.exists(f):
+                os.remove(f)
     if ok:
-        return pdf_path, name
+        return pdf_path, name + (' (Fehrist page numbers)' if numbered else '')
     return None, msg
 
 

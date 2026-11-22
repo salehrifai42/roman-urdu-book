@@ -14,7 +14,7 @@ import build as B  # noqa: E402
 
 PANDOC = shutil.which("pandoc")
 
-CHUNK1 = """# Muqaddimah
+CHUNK1 = """# Muqaddima
 
 Tamam tareefen Allah Ta'ala ke liye hain. Rasoolullah (Sallallahu Alaihi Wasallam) ne farmaya:
 
@@ -107,7 +107,7 @@ class MergeTests(unittest.TestCase):
             work = make_run(d)
             merged, errors = B.merge_chunks(str(work))
             self.assertEqual(errors, [])
-            self.assertLess(merged.index("Muqaddimah"), merged.index("Tauheed Ki Tareef"))
+            self.assertLess(merged.index("Muqaddima"), merged.index("Tauheed Ki Tareef"))
 
     def test_blank_output_aborts(self):
         with tempfile.TemporaryDirectory() as d:
@@ -171,7 +171,7 @@ class BuildWithPandocTests(unittest.TestCase):
 
             html = Path(d, "book.html").read_text(encoding="utf-8")
             self.assertIn('dir="rtl"', html)
-            self.assertIn("Fehrist-e-Mazaameen", html)
+            self.assertIn(">Fehrist<", html)
             self.assertIn("Aasan Tauheed", html)
             self.assertIn('class="cover"', html)
             self.assertIn("Taleef:", html)
@@ -212,6 +212,43 @@ class BuildWithPandocTests(unittest.TestCase):
             rc = B.main([d, "--title", "T", "--formats", "md,html"])
             self.assertEqual(rc, 1)
 
+
+
+class TocPageNumberTests(unittest.TestCase):
+    HTML = ('<body><nav class="toc" id="toc"><ul>'
+            '<li><a href="#one" id="toc-one">One</a></li>'
+            '<li><a href="#two" id="toc-two">Two <em>x</em></a><ul>'
+            '<li><a href="#two-a" id="toc-two-a">Two A</a></li></ul></li>'
+            '</ul></nav><main><a href="#one">body link untouched</a></main></body>')
+
+    def test_placeholders_only_inside_nav(self):
+        tagged, n = B.add_toc_page_placeholders(self.HTML)
+        self.assertEqual(n, 3)
+        self.assertIn('<span class="toc-text">Two <em>x</em></span><span class="toc-page pending">{p2}</span>', tagged)
+        self.assertIn('<a href="#one">body link untouched</a>', tagged)
+        self.assertEqual(tagged.count('toc-page pending'), 3)
+
+    def test_fill_replaces_tokens_and_drops_unknown(self):
+        tagged, _ = B.add_toc_page_placeholders(self.HTML)
+        filled = B.fill_toc_pages(tagged, {1: 4, 2: 7})
+        self.assertIn('<span class="toc-page">4</span>', filled)
+        self.assertIn('<span class="toc-page">7</span>', filled)
+        self.assertIn('<span class="toc-page"></span>', filled)  # entry 3 had no page
+        self.assertNotIn('{p', filled)
+        self.assertNotIn('pending', filled)
+
+    def test_extract_reads_pdftohtml_links(self):
+        xml = ('<text top="1" left="1" width="9" height="9" font="0"><a href="book.html#4">One {p1}</a></text>\n'
+               '<text top="2" left="1" width="9" height="9" font="0"><a href="book.html#7">Two</a></text>\n'
+               '<text top="3" left="1" width="9" height="9" font="0"><a href="book.html#7">{p2}</a></text>\n')
+        fake = mock.Mock(stdout=xml.encode("utf-8"))
+        with mock.patch.object(B.shutil, "which", return_value="/usr/bin/pdftohtml"), \
+             mock.patch.object(B.subprocess, "run", return_value=fake):
+            self.assertEqual(B.extract_toc_pages("x.pdf"), {1: 4, 2: 7})
+
+    def test_no_nav_is_a_noop(self):
+        html, n = B.add_toc_page_placeholders("<body><p>no toc</p></body>")
+        self.assertEqual((html, n), ("<body><p>no toc</p></body>", 0))
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,6 @@
 # Aasan Tauheed
 
-## Muqaddimah
+## Muqaddima
 
 Tamam tareefen Allah Ta'ala ke liye hain jo Rabbul Aalameen hai, aur rehmaten aur salaam hon Nabi (Sallallahu Alaihi Wasallam) par, aap ki aal par aur aap ke Sahaba (Radiallahu Anhum) par. Yeh mukhtasar kitab Tauheed, yani Allah Ta'ala ki wahdaniyat, ko aasaan alfaaz mein bayan karti hai taake ek mubtadi bhi samajh sake ke is ka matlab kya hai aur yeh kyun ahem hai.
 
@@ -30,7 +30,7 @@ Nabi (Sallallahu Alaihi Wasallam) ne farmaya: "Aamaal ka daromadar niyaton par h
 
 Yeh Hadees sikhati hai ke kisi amal ki qadr us dil par munhasir hai jo us ke peeche hai. Tauheed sirf zabaan ka ek qaul nahi. Yeh dil ka ikhlas hai, taake ek Musalman sirf Allah Ta'ala ke liye Namaz padhe, sadqa de aur usi se madad maange, us ke ajr ki umeed rakhte hue aur us ke azaab se darte hue. Ikhlas ke saath kiya gaya chhota sa amal Meezan mein dikhawe ke liye kiye gaye aamaal ke pahaad se zyada wazni hai.
 
-## Khatimah
+## Khatima
 
 Har cheez se pehle Tauheed seekhiye, apne bachchon ko sikhaiye, aur Allah Ta'ala se dua kijiye ke woh aap ko is par sabit qadam rakhe yahan tak ke aap us se mil jayen. Jo shakhs Tauheed par marega woh Jannat mein dakhil hoga, aur jo Shirk par marega woh dakhil nahi hoga.
 

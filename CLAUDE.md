@@ -17,6 +17,7 @@ roman-urdu-book is an agent skill for Claude Code and Codex that translates an E
 - `glossary/spelling-rules.json` — canonical spellings and rejected variants; machine twin of the style-guide table.
 - `scripts/doctor.py` — dependency report; shared binary/module discovery helpers.
 - `scripts/convert.py` — any input → `work/input.md` → chunks, manifest, fingerprint, `config.json`.
+- `scripts/pdf_layout.py` — layout-aware PDF → Markdown via `pdftohtml -xml` (font-size/bold/lone-line headings, gap-based paragraphs, drops running footers and the source's own contents block). Preferred PDF method; `pdftotext` + `reflow_pdf_text` is the fallback.
 - `scripts/manifest.py` — vendored from translate-book: chunk hashes and merge validation.
 - `scripts/chunk_context.py` — vendored from translate-book: neighbouring chunk excerpts.
 - `scripts/detect_domain.py` — Islamic vs general detection.
@@ -35,7 +36,7 @@ roman-urdu-book is an agent skill for Claude Code and Codex that translates an E
 ## Prerequisites
 
 - Python 3.10+; unit tests need only the standard library (third-party imports are guarded).
-- The full pipeline needs pandoc. PDF input needs one of pdftotext, PyMuPDF, pypdf, Calibre. PDF output needs one of Chrome/Chromium/Edge, wkhtmltopdf, weasyprint, Calibre. Missing optional tools skip a format; they never fail the run.
+- The full pipeline needs pandoc. PDF input needs poppler (`pdftohtml` for headings, `pdftotext` as fallback) or one of PyMuPDF, pypdf, Calibre (plain text, headings guessed). PDF output needs one of Chrome/Chromium/Edge, wkhtmltopdf, weasyprint, Calibre. Missing optional tools skip a format; they never fail the run.
 
 ## Testing changes
 

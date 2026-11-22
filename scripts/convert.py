@@ -35,11 +35,13 @@ if str(SCRIPT_DIR) not in sys.path:
 
 import doctor  # noqa: E402
 import manifest  # noqa: E402
+import pdf_layout  # noqa: E402
 
 SKILL_VERSION = "0.1.0"
 DEFAULT_CHUNK_SIZE = 4500
 PANDOC_INPUTS = {"docx", "epub", "html", "htm", "odt", "rtf", "fb2"}
-PDF_METHODS = ("pdftotext", "pymupdf", "pypdf", "calibre")
+PDF_METHODS = ("pdftohtml", "pdftotext", "pymupdf", "pypdf", "calibre")
+LAYOUT_METHODS = {"pdftohtml"}  # extractors that already return Markdown with headings
 
 
 # ---------------------------------------------------------------------------
@@ -158,6 +160,14 @@ def strip_page_numbers(content, aggressive=False):
 # PDF text extraction and reflow
 # ---------------------------------------------------------------------------
 
+def _extract_pdftohtml(pdf_path):
+    """Layout-aware extraction (font sizes, bold, spacing) -> Markdown. See pdf_layout.py."""
+    exe = doctor.find_binary("pdftohtml")
+    if not exe:
+        raise RuntimeError("pdftohtml not available")
+    return pdf_layout.pdf_to_markdown(pdf_path, exe=exe)
+
+
 def _extract_pdftotext(pdf_path):
     exe = doctor.find_binary("pdftotext")
     if not exe:
@@ -204,6 +214,7 @@ def _extract_calibre(pdf_path):
 
 
 EXTRACTORS = {
+    "pdftohtml": _extract_pdftohtml,
     "pdftotext": _extract_pdftotext,
     "pymupdf": _extract_pymupdf,
     "pypdf": _extract_pypdf,
@@ -227,7 +238,7 @@ def extract_pdf_text(pdf_path, method="auto"):
         except Exception as e:  # noqa: BLE001 - surface every failure
             errors.append(f"{name}: {e}")
     hints = doctor.INSTALL_HINTS
-    matrix = "\n".join(f"  - {k}: {hints[k]}" for k in ("pdftotext", "pymupdf", "pypdf", "calibre"))
+    matrix = "\n".join(f"  - {k}: {hints[k]}" for k in ("pdftohtml", "pdftotext", "pymupdf", "pypdf", "calibre"))
     detail = ("\n".join("  " + e for e in errors)) if errors else "  (no extractor installed)"
     raise RuntimeError(
         "Could not extract text from the PDF.\n" + detail +
@@ -236,7 +247,7 @@ def extract_pdf_text(pdf_path, method="auto"):
 
 _SENTENCE_END = re.compile(r'[.!?:;"”’)\]۔؟]\d{0,2}\s*$')  # trailing digits = glued footnote marker
 _FOOTNOTE_LINE = re.compile(r"^\d{1,3}\s+\S")
-_LIST_LINE = re.compile(r"^(?:\d{1,3}[.)]|[-*•▪◦]|[a-z][.)]|[ivx]{1,4}[.)])\s+\S")
+_LIST_LINE = re.compile(r"^(?:\d{1,3}[.)]|[-*•▪◦]|(?!p[.)]\s+\d)[a-z][.)]|[ivx]{1,4}[.)])\s+\S")  # not "p. 89"
 _ARABIC_CHARS = re.compile(r"[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]")
 _QUOTE_START = re.compile(r'^["“‘\'«]')
 
@@ -621,13 +632,34 @@ def split_markdown(md_text, work_dir, target_size=DEFAULT_CHUNK_SIZE):
 # Orchestration
 # ---------------------------------------------------------------------------
 
+ARABIC_PLACEHOLDER = "[Arabi matn]"
+
+
+def drop_arabic_paragraphs(md, marker=ARABIC_PLACEHOLDER):
+    """Replace paragraphs that are mostly Arabic with one marker line per run.
+
+    For PDFs whose Arabic extracts in visual (reversed) order or letter by letter,
+    passing it through would print garbage. The marker keeps the spot so correct
+    Arabic can be pasted in after the build. Inline Arabic inside English
+    paragraphs (e.g. an honorific) is left alone.
+    """
+    out = []
+    for para in re.split(r"\n\s*\n", md.strip()):
+        if _is_arabic_line(re.sub(r"\s+", " ", para)):
+            if not out or out[-1] != marker:
+                out.append(marker)
+        else:
+            out.append(para)
+    return "\n\n".join(out) + "\n"
+
+
 def to_markdown(input_path, out_dir, pdf_method="auto", keep_page_numbers=False):
     """Return (markdown_text, method, metadata)."""
     fmt = input_format(input_path)
     meta = {"title": "", "author": ""}
     if fmt == "pdf":
         raw, method = extract_pdf_text(input_path, pdf_method)
-        md = reflow_pdf_text(raw, keep_page_numbers=keep_page_numbers)
+        md = raw if method in LAYOUT_METHODS else reflow_pdf_text(raw, keep_page_numbers=keep_page_numbers)
     elif fmt in ("md", "markdown"):
         md, method = Path(input_path).read_text(encoding="utf-8", errors="replace"), "markdown"
         if doctor.find_binary("pandoc"):
@@ -708,7 +740,7 @@ def load_config(out_dir):
 
 
 def convert(input_path, out_dir=None, chunk_size=DEFAULT_CHUNK_SIZE, pdf_method="auto",
-            keep_page_numbers=False, force=False):
+            keep_page_numbers=False, force=False, drop_arabic=False):
     input_path = Path(input_path).resolve()
     if not input_path.is_file():
         raise RuntimeError(f"Input file not found: {input_path}")
@@ -731,6 +763,8 @@ def convert(input_path, out_dir=None, chunk_size=DEFAULT_CHUNK_SIZE, pdf_method=
 
     fmt = input_format(input_path)
     md, method, meta = to_markdown(input_path, out_dir, pdf_method=pdf_method, keep_page_numbers=keep_page_numbers)
+    if drop_arabic:
+        md = drop_arabic_paragraphs(md)
     input_md = work_dir / "input.md"
     _atomic_write(input_md, md)
     print(f"Converted {input_path.name} via {method}: {len(md)} chars -> {input_md}")
@@ -757,10 +791,12 @@ def main(argv=None):
     parser.add_argument("--pdf-method", choices=("auto",) + PDF_METHODS, default="auto")
     parser.add_argument("--keep-page-numbers", action="store_true", help="Do not drop page-number lines from PDFs")
     parser.add_argument("--force", action="store_true", help="Rebuild chunks even if the run dir exists")
+    parser.add_argument("--drop-arabic", action="store_true",
+                        help=f"Replace mostly-Arabic paragraphs with {ARABIC_PLACEHOLDER!r} (for PDFs whose Arabic extracts garbled)")
     args = parser.parse_args(argv)
     try:
         _, summary = convert(args.input, args.out_dir, args.chunk_size, args.pdf_method,
-                             args.keep_page_numbers, args.force)
+                             args.keep_page_numbers, args.force, args.drop_arabic)
     except RuntimeError as e:
         print(f"ERROR: {e}", file=sys.stderr)
         return 2

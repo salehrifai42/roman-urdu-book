@@ -45,6 +45,7 @@ Use only the Canonical column. The linter auto-fixes the rejected variants marke
 | like / such as | `jaise` | jese, jaisay | |
 | also | `bhi` | bhee | |
 | should | `chahiye` | chahye, chahiay | |
+| to read / recite (verb stem) | `parh` | padh, padhna, padhta | `parhna`, `parhta`, `parhi`, `parhkar`; the linter rewrites only the stem, so every inflection is covered |
 | people | `log` / `logon` | logo, logo'n | |
 | Allah's exaltation | `Ta'ala` | Ta'aala, Taala, Ta'alaa | always `Allah Ta'ala` in narrative |
 | monotheism | `Tauheed` | Tawheed, Tavheed, Tauhid, Tawhid | keep Tawakkul, Tawassul, Tauba unchanged |
@@ -85,7 +86,7 @@ Transliteration rules:
 - Apostrophe for ع and ء: `ma'na`, `du'a` inside compounds (but the standalone word is `Dua`), `Ka'bah`, `Ta'ala`, `nafa'`.
 - Keep `kh`, `gh`, `q` distinct: `khauf`, `ghalat`, `qabool`. Use `z` for ز, ذ, ض, ظ: `zulm`, `zikr`, `Ramzan`, `zaahir`. Use `s` for ث: `Usman`, `Hadees`, `Ibn Kaseer`.
 - No diacritics, macrons or digits-for-letters (no `3ain`, no `7`).
-- Izafat is hyphenated: `Tauheed-e-Rububiyat`, `Fehrist-e-Mazaameen`, `Sahaba-e-Kiraam`, `Ahl-e-Sunnat`.
+- Izafat is hyphenated: `Tauheed-e-Rububiyat`, `Sahaba-e-Kiraam`, `Ahl-e-Sunnat`, `Arz-e-Nashir`.
 - Arabic definite article in names keeps its hyphen: `Al-Bukhari`, `Ibn Taimiyyah`, `Abdur Rahman bin Auf`. Use `bin` in Roman Urdu names (`Umar bin Khattab`), not `ibn`.
 - Numbers are digits. Hijri years take `H`: `1424 H`.
 
@@ -135,12 +136,12 @@ Rules: honorifics are written exactly as shown, capitalised, in parentheses, aft
 | Translator | `Mutarjim` |
 | Foreword / Preface | `Taqdeem` |
 | Publisher's note | `Arz-e-Nashir` |
-| Introduction | `Muqaddimah` |
+| Introduction | `Muqaddima` |
 | Preamble | `Tamheed` |
-| Contents / Table of contents | `Fehrist-e-Mazaameen` |
+| Contents / Table of contents | `Fehrist` |
 | Chapter | `Baab` (`Baab 3`) |
 | Section | `Fasl` |
-| Conclusion | `Khatimah` |
+| Conclusion | `Khatima` |
 | Notes / Footnotes | `Hawashi` |
 | References / Bibliography | `Maakhaz` |
 | Appendix | `Zameema` |
@@ -153,7 +154,7 @@ The same spelling table and transliteration rules apply. Differences:
 - No religious honorifics are added; only those present in the source are kept.
 - Technical or untranslatable English terms are kept in English in parentheses on first use after the Urdu gloss: `azdaad (opposite)`, `mutawaazi computing (parallel computing)`.
 - Proper nouns keep their common English spelling (London, Newton, Shakespeare) unless an Urdu form is standard in Urdu newspapers (`Misr`, `Hindustan`, `Amreeka`, `Bartaniya`). When unsure, keep the English form.
-- Contents label is `Fehrist`; "Chapter" is still `Baab`; "Part" is `Hissa`.
+- Front-matter labels are the same (`Fehrist`, `Muqaddima`, `Khatima`, `Baab`); "Part" is `Hissa`.
 - Keep the author's tone: a novel stays narrative and informal, a textbook stays plain and precise.
 
 ## 8. Anti-patterns
@@ -163,7 +164,7 @@ The same spelling table and transliteration rules apply. Differences:
 | `Rasoolullah SAW ne farmaya` | `Rasoolullah (Sallallahu Alaihi Wasallam) ne farmaya` | honorific abbreviated |
 | `Nabi ne farmaya` | `Nabi (Sallallahu Alaihi Wasallam) ne farmaya` | honorific dropped |
 | `Allah ne kaha` (narrative) | `Allah Ta'ala ne farmaya` | missing Ta'ala and respectful verb |
-| `dharti`, `prem`, `dharam`, `ishwar` | `zameen`, `muhabbat`, `deen`, `Allah Ta'ala` | Hindi-leaning vocabulary |
+| `dharti`, `prem`, `dharam`, `ishwar`, `padhna` | `zameen`, `muhabbat`, `deen`, `Allah Ta'ala`, `parhna` | Hindi-leaning vocabulary |
 | `Tawheed`, `Tawhid` | `Tauheed` | non-canonical spelling |
 | `keh`, `wo`, `ye`, `nahin`, `main` (for "in") | `ke`, `woh`, `yeh`, `nahi`, `mein` | non-canonical spelling |
 | `Sahih Bukhari mein hai ke...` (reference moved into prose) | `"..." (Sahih Bukhari: 1)` | citation format changed |

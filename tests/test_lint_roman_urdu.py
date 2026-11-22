@@ -55,7 +55,7 @@ See also 2:255 and the note.[^1] ![Figure](media/img1.png)
 [^1]: A footnote.
 """
 
-OUT = """# Muqaddimah
+OUT = """# Muqaddima
 
 Rasoolullah (Sallallahu Alaihi Wasallam) ne farmaya: "Amaal ka daromadaar niyyaton par hai." (Sahih Bukhari: 1)
 
@@ -151,7 +151,7 @@ class LintPairTests(unittest.TestCase):
         self.assertIn("E_COMMENTARY", [e["code"] for e in report["errors"]])
 
     def test_removed_heading_is_structure_error(self):
-        out = OUT.replace("# Muqaddimah\n", "Muqaddimah\n")
+        out = OUT.replace("# Muqaddima\n", "Muqaddima\n")
         report, _ = L.lint_pair(SRC, out, rules(), GLOSSARY)
         codes = [e["code"] for e in report["errors"]]
         self.assertIn("E_STRUCTURE", codes)
@@ -196,6 +196,12 @@ class LintPairTests(unittest.TestCase):
         out = OUT.replace("قُلْ هُوَ اللَّهُ أَحَدٌ", "قُلْ")
         report, _ = L.lint_pair(SRC, out, rules(), GLOSSARY)
         self.assertTrue(any("Arabic" in e["message"] for e in report["errors"]))
+
+    def test_honorific_ligature_not_counted_as_arabic(self):
+        src = "The Prophet (ﷺ) said this.\n"
+        out = "Nabi (Sallallahu Alaihi Wasallam) ne yeh farmaya.\n"
+        report, _ = L.lint_pair(src, out, rules(), GLOSSARY)
+        self.assertFalse(any("Arabic" in e["message"] for e in report["errors"]))
 
     def test_urdu_script_warning(self):
         out = OUT.replace("ek hai", "ایک hai")
