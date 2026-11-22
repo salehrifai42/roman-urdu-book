@@ -20,7 +20,7 @@ $css_inline$
 $if(cover-image)$
   <img class="cover-image" src="$cover-image$" alt="">
 $endif$
-  <h1 class="book-title">$title$</h1>
+  <p class="book-title" role="heading" aria-level="1">$title$</p>
 $if(subtitle)$
   <p class="book-subtitle">$subtitle$</p>
 $else$
@@ -40,8 +40,8 @@ $if(date)$
 $endif$
 </section>
 $if(toc)$
-<nav class="toc" id="toc" aria-label="Fehrist-e-Mazaameen">
-  <h2>Fehrist-e-Mazaameen</h2>
+<nav class="toc" id="toc" aria-label="Fehrist">
+  <h2>Fehrist</h2>
 $toc$
 </nav>
 <button class="toc-toggle" type="button" aria-label="Fehrist" aria-controls="toc" onclick="document.body.classList.toggle('toc-open')">&#9776;</button>

@@ -189,6 +189,7 @@ def chrome_command(chrome, html_path, pdf_path, user_data_dir):
         "--no-default-browser-check",
         f"--user-data-dir={user_data_dir}",
         "--no-pdf-header-footer",
+        "--generate-pdf-document-outline",  # bookmarks sidebar from the h1-h6 headings
         "--run-all-compositor-stages-before-draw",
         "--virtual-time-budget=5000",
         f"--print-to-pdf={Path(pdf_path).resolve()}",

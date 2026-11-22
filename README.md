@@ -12,7 +12,7 @@ The output register is the Roman Urdu used by Indo-Pak Islamic publishers (the b
 Input (PDF / DOCX / EPUB / HTML / MD / TXT)
   |
   v
-pandoc (or pdftotext / PyMuPDF / pypdf for PDF)  -->  work/input.md
+pandoc (or pdftohtml / pdftotext / PyMuPDF / pypdf for PDF)  -->  work/input.md
   |
   v
 Split into chunks  (work/chunk0001.md ...)   manifest.json tracks hashes
@@ -125,7 +125,7 @@ Everything goes into `<book-name>_roman_urdu/` next to the input file:
 | File | Description |
 |---|---|
 | `book.md` | Merged Roman Urdu Markdown with cover block and front matter |
-| `book.html` | Standalone web version with cover page and a Fehrist-e-Mazaameen (contents) drawer |
+| `book.html` | Standalone web version with cover page and a Fehrist (contents) drawer |
 | `book.docx` | Word document |
 | `book.epub` | E-book with metadata and optional cover image |
 | `book.pdf` | A5 print-ready PDF (skipped with a hint if no renderer is installed) |
@@ -136,7 +136,7 @@ Everything goes into `<book-name>_roman_urdu/` next to the input file:
 
 | File | What it controls |
 |---|---|
-| `references/style-guide.md` | Spelling table, honorific table, citation formats, structural labels (Baab, Fasl, Muqaddimah...), general register, anti-patterns. Read by every translation sub-agent. |
+| `references/style-guide.md` | Spelling table, honorific table, citation formats, structural labels (Baab, Fasl, Muqaddima...), general register, anti-patterns. Read by every translation sub-agent. |
 | `glossary/spelling-rules.json` | Canonical spellings and rejected variants used by the linter's auto-fix. Keep in sync with the style guide; a unit test checks this. |
 | `glossary/islamic-terms.json` | Built-in seed glossary (terms, prophets, companions, scholars, books, surah names, places, fixed phrases) and honorific rules. |
 | `<book>_roman_urdu/work/glossary.json` | This book's glossary. Edit `target` or `honorific` values between runs. |
@@ -161,9 +161,11 @@ Run the same request again and the skill skips chunks that already have output. 
 | Problem | What to do |
 |---|---|
 | `pandoc not found` | Install pandoc (see Prerequisites) and make sure it is on PATH. |
-| `No PDF text extractor available` | Install poppler (`pdftotext`), or `pip install pymupdf`, or `pip install pypdf`, or Calibre. Or convert the PDF to EPUB/DOCX first. |
+| `No PDF text extractor available` | Install poppler (`pdftohtml` + `pdftotext`), or `pip install pymupdf`, or `pip install pypdf`, or Calibre. Or convert the PDF to EPUB/DOCX first. |
+| PDF book has no headings / empty table of contents | Only poppler's `pdftohtml` sees font sizes and spacing; the other extractors return plain text and headings are guessed from capitalisation. Install poppler and re-convert into a fresh `--out-dir`. |
 | `pdf: skipped` | Install Google Chrome/Chromium/Edge, `wkhtmltopdf`, `pip install weasyprint`, or Calibre, then re-run the build step. |
 | Chrome hangs or complains about a profile in use | The skill starts Chrome with a temporary `--user-data-dir`; close other headless Chrome processes and retry. Set `ROMAN_URDU_CHROME=/path/to/chrome` to pick a specific binary. |
+| Arabic from a PDF comes out reversed or letter-spaced | The PDF stores Arabic in visual order. Re-convert with `convert.py --force --drop-arabic`. Each Arabic paragraph becomes a `[Arabi matn]` marker, and you paste the correct text in after the build. |
 | Garbled or merged words from a PDF | Try `--pdf-method pymupdf` on `convert.py`, or supply an EPUB/DOCX of the same book. Scanned PDFs need OCR first. |
 | Arabic shows as boxes in the PDF | Install an Arabic font such as Amiri or Noto Naskh Arabic. macOS ships Geeza Pro, which works. |
 | `was created from different source bytes` | The output directory belongs to another file. Delete it or use a new `--out-dir`. |

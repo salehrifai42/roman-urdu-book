@@ -75,6 +75,8 @@ The last line of stdout is a JSON summary: `{"chunk_count": N, "title": ..., "au
 
 If the script aborts because the directory was created from different source bytes, tell the user to delete `<out_dir>` or pass a new `--out-dir`, then stop. If it exits with code 2 (no PDF extractor), show its install matrix and stop.
 
+Look at the Arabic in `work/input.md`. Some PDFs extract it in reverse order, letter by letter, or with vowel marks on separate lines. If it is garbled, ask the user once whether to drop it. If they agree, re-run the command above with `--force --drop-arabic`. Each mostly-Arabic paragraph then becomes a `[Arabi matn]` line, so the correct text can be pasted in later. Also add this to `custom_instructions`: "Copy every line that reads exactly [Arabi matn] unchanged, on its own line, in the same place as in the source."
+
 ### Step 3 — Detect domain
 
 ```bash

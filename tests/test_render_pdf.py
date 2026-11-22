@@ -57,6 +57,7 @@ class ChromeCommandTests(unittest.TestCase):
             self.assertTrue(any(a.startswith("--print-to-pdf=") for a in cmd))
             self.assertTrue(any(a.startswith("--user-data-dir=") for a in cmd))
             self.assertIn("--no-pdf-header-footer", cmd)
+            self.assertIn("--generate-pdf-document-outline", cmd)
             self.assertTrue(cmd[-1].startswith("file://"))
 
 

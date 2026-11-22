@@ -33,6 +33,9 @@ DEFAULT_RULES_PATH = SKILL_ROOT / "glossary" / "spelling-rules.json"
 
 ARABIC_CHARS = "؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿"
 ARABIC_RE = re.compile(f"[{ARABIC_CHARS}]")
+# One-glyph honorific ligatures (U+FDF0-U+FDFD: Allah, Sallallahu Alaihi Wasallam, ...)
+# are rendered in Roman Urdu per the style guide, so they are not Arabic text to preserve.
+HONORIFIC_LIGATURE_RE = re.compile("[ﷰ-﷽]")
 ARABIC_RUN_RE = re.compile(f"[{ARABIC_CHARS}][{ARABIC_CHARS}\\sً-ٰٟ]*")
 
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
@@ -268,7 +271,7 @@ def _features(text):
         "images": Counter(IMAGE_RE.findall(joined)),
         "links": Counter(LINK_RE.findall(joined)),
         "footnotes": set(FOOTNOTE_MARK_RE.findall(joined)),
-        "arabic_chars": len(ARABIC_RE.findall(text)),
+        "arabic_chars": len(ARABIC_RE.findall(HONORIFIC_LIGATURE_RE.sub("", text))),
     }
 
 

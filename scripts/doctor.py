@@ -22,6 +22,8 @@ PANDOC_OUTPUTS = ["md", "html", "docx", "epub"]
 INSTALL_HINTS = {
     "pandoc": "Install pandoc: macOS `brew install pandoc`; Debian/Ubuntu `sudo apt-get install pandoc`; "
               "Windows `choco install pandoc` or https://pandoc.org/installing.html",
+    "pdftohtml": "Install poppler for `pdftohtml` (layout-aware: recovers headings and paragraphs; same package "
+                 "as pdftotext): macOS `brew install poppler`; Debian/Ubuntu `sudo apt-get install poppler-utils`",
     "pdftotext": "Install poppler for `pdftotext`: macOS `brew install poppler`; Debian/Ubuntu "
                  "`sudo apt-get install poppler-utils`; Windows: https://github.com/oschwartz10612/poppler-windows",
     "pymupdf": "`pip install pymupdf` (PyMuPDF, imported as `fitz`)",
@@ -85,8 +87,10 @@ def find_chrome():
 
 
 def find_pdf_extractors():
-    """Ordered list of available PDF text extractors: pdftotext, pymupdf, pypdf, calibre."""
+    """Ordered list of available PDF text extractors: pdftohtml, pdftotext, pymupdf, pypdf, calibre."""
     found = []
+    if find_binary("pdftohtml"):
+        found.append("pdftohtml")
     if find_binary("pdftotext"):
         found.append("pdftotext")
     if has_module("fitz"):
@@ -172,7 +176,7 @@ def _print_table(rep):
     print(f"  python           {rep['python']} ({rep['platform']})")
     print(f"  {mark(rep['pandoc']['ok'])}pandoc         {rep['pandoc'].get('version') or 'not found (required)'}")
     ex = rep["pdf_extractors"]
-    print(f"  {mark(bool(ex))}PDF input      {', '.join(ex) if ex else 'no extractor (pdftotext / pymupdf / pypdf / calibre)'}")
+    print(f"  {mark(bool(ex))}PDF input      {', '.join(ex) if ex else 'no extractor (pdftohtml / pdftotext / pymupdf / pypdf / calibre)'}")
     rd = rep["pdf_renderers"]
     print(f"  {mark(bool(rd))}PDF output     {', '.join(r['kind'] for r in rd) if rd else 'no renderer (chrome / wkhtmltopdf / weasyprint / calibre)'}")
     print(f"  inputs           {', '.join(rep['supported_inputs'])}")
